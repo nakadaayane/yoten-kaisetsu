@@ -1,0 +1,742 @@
+  :root{
+    --ink:#1e293b; --navy:#1e3a8a; --navy-2:#2c4ba3; --sky:#0284c7; --sky-2:#38bdf8;
+    --sub:#475569; --mute:#64748b;
+    --line:#cbd5e1; --line-soft:#e2e8f0;
+    --bg:#ffffff; --card:#f1f5f9; --card-sky:#f0f9ff;
+    --accent:#fbbf24;
+    --shadow:0 1px 2px rgba(15,23,42,.04), 0 4px 16px rgba(15,23,42,.06);
+    --radius:10px;
+    --wrap: min(800px, 100% - 32px);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic","Yu Gothic UI","Meiryo",system-ui,sans-serif;
+    color:var(--ink); background:var(--bg);
+    line-height:1.85; font-size:16px; font-feature-settings:"palt";
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;height:auto;display:block}
+  a{color:var(--sky);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  /* ① 紺色帯ヘッダ */
+  .topbar{ background:var(--navy); color:#fff; padding:9px 0; }
+  .topbar-inner{
+    width:var(--wrap); margin:0 auto;
+    font-size:clamp(12px, 2.4vw, 13px); letter-spacing:.14em; font-weight:700;
+    text-align:left;
+  }
+
+  /* ② 白背景ヒーロー */
+  .hero-light{
+    background:#fff; color:var(--ink);
+    padding:30px 0 28px;
+    border-bottom:1px solid var(--line-soft);
+  }
+  .hero-light .hero-inner{ width:var(--wrap); margin:0 auto; }
+  .hero-light .sub{
+    font-size:clamp(13px, 3.6vw, 22px);
+    color:var(--sky); font-weight:700; line-height:1.4;
+    white-space:nowrap; letter-spacing:.005em;
+    margin-bottom:6px;
+  }
+  .hero-light h1{
+    font-size:clamp(16px, 4.4vw, 32px); font-weight:800;
+    line-height:1.3; letter-spacing:.005em;
+    color:var(--navy); white-space:nowrap;
+  }
+  .hero-light .hero-meta{
+    margin-top:12px; font-size:13px; color:var(--sub); letter-spacing:.04em;
+  }
+  .hero-light .hero-meta .sep{ margin:0 10px; color:var(--line); }
+  .hero-light .hero-catch{
+    margin-top:18px; padding-top:16px;
+    border-top:1px dotted var(--line-soft);
+    font-size:16px; line-height:1.9; color:var(--ink);
+    text-align:justify;
+  }
+  /* 導入リード（惹句）：紺の太字。黄マーカー <mark> は {{HERO_CATCH}} の中で1回だけ（本文セクションでは使わない） */
+  .hero-light .hero-catch .catch-hook{
+    display:block; font-size:17px; font-weight:700; color:var(--navy);
+    line-height:1.65; margin-bottom:10px;
+  }
+
+  /* 講師セクション */
+  .author-label{
+    display:flex; align-items:center; gap:14px;
+    font-size:clamp(18px, 3vw, 22px); font-weight:800; color:var(--navy);
+    letter-spacing:.02em; line-height:1.4;
+  }
+  .author-label::after{ content:""; flex:1; height:1px; background:var(--line); }
+  .author-box{
+    margin-top:18px;
+    display:grid; grid-template-columns:90px 1fr; gap:22px;
+    background:#fff;
+    border:1px solid var(--line-soft);
+    border-radius:var(--radius);
+    padding:22px 24px;
+    align-items:start;
+    box-shadow:var(--shadow);
+  }
+  .author-box img{
+    width:90px; height:120px; object-fit:cover;
+    border:1px solid var(--line); border-radius:4px;
+  }
+  .author-box .aname{
+    font-size:21px; font-weight:800; color:var(--navy);
+    line-height:1.4; letter-spacing:.005em;
+  }
+  .author-box .aname .suffix{
+    font-size:.72em; font-weight:600; color:var(--sub); margin-left:4px;
+  }
+  .author-box .aorg{
+    font-size:13.5px; color:var(--ink); margin-top:4px; line-height:1.6; font-weight:700;
+  }
+  .author-box .bio{
+    font-size:14.5px; color:var(--ink); line-height:2.0; margin-top:14px;
+    text-align:justify;
+  }
+  .author-box .bio .strong{ color:var(--navy); font-weight:700; }
+  @media (max-width:560px){
+    .author-box{ grid-template-columns:1fr; padding:18px 20px; gap:14px; }
+    .author-box img{ width:90px; height:120px; }
+  }
+
+  /* 目次 */
+  .toc-wrap{ background:var(--card-sky); border-bottom:1px solid #bae6fd; }
+  .toc{ width:var(--wrap); margin:0 auto; padding:22px 0 26px; }
+  .toc h2{
+    font-size:clamp(18px, 3vw, 22px); letter-spacing:.18em;
+    color:var(--navy); font-weight:800;
+    padding-bottom:10px; border-bottom:2px solid var(--navy);
+  }
+  .toc ol{
+    list-style:none; margin-top:14px;
+    columns:2; column-gap:18px;   /* ★目次は column-major（左列を上から下→右列を上から下）。grid の行送り＝ジグザグにしない */
+    counter-reset:toc -1; /* 講師紹介を 00 から始める */
+  }
+  .toc li{
+    font-size:14px; color:var(--ink); padding:6px 0; line-height:1.55;
+    counter-increment:toc;
+    border-bottom:1px dotted var(--line);
+    break-inside:avoid; -webkit-column-break-inside:avoid;
+  }
+  .toc li::before{
+    content:counter(toc, decimal-leading-zero);
+    color:var(--sky); font-weight:700; margin-right:10px; font-size:12px; letter-spacing:.05em;
+  }
+  .toc a{ color:inherit; }
+  .toc a:hover{ color:var(--navy); }
+  .toc-catch{
+    margin-top:18px; padding-top:14px;
+    border-top:1px dotted var(--line);
+    font-size:12px; line-height:1.75; color:var(--mute);
+  }
+
+  /* セクション共通 */
+  section.s{ padding:48px 0 0; background:#fff; }
+  .s-inner{ width:var(--wrap); margin:0 auto; }
+  .s-num{
+    display:flex; align-items:center; gap:14px;
+    font-size:12px; letter-spacing:.18em; font-weight:700; color:var(--sky);
+    text-transform:uppercase;
+  }
+  .s-num::after{ content:""; flex:1; height:1px; background:var(--line); }
+  .s-h{
+    margin-top:10px; font-size:clamp(22px,4.2vw,30px); font-weight:800;
+    line-height:1.35; color:var(--navy); letter-spacing:.005em;
+  }
+  .s-lead{ margin-top:22px; font-size:16px; line-height:1.9; }
+  /* 中見出し＝<h3 class="s-sub">（水色の見出し）。左に角丸マーク .cn.mark を付けて統一。
+     DATA/CAUSE 等の文字バッヂ（.cn 単体）は使わない（section見出し h2 の下位＝h3） */
+  .s-sub{
+    margin-top:34px; font-size:clamp(16px,2.8vw,18px); font-weight:800; color:var(--sky);
+    line-height:1.5; display:flex; align-items:baseline; gap:10px;
+  }
+  /* .cn は .cn.mark（角丸マーク）の下地スタイル。文字バッヂ単体としては使わない */
+  .s-sub .cn{
+    flex:none; font-size:12px; font-weight:800; letter-spacing:.06em; color:#fff;
+    background:var(--sky); border-radius:4px; padding:3px 9px; line-height:1.2;
+  }
+  /* 中見出しの左に付く角丸リストマーク（値なし・水色） */
+  .s-sub .cn.mark{ align-self:center; width:12px; height:12px; padding:0; border-radius:4px; }
+  .em{ color:var(--sky); font-weight:700; }
+  .strong{ color:var(--navy); font-weight:700; }
+  mark{ background:linear-gradient(transparent 62%, #fde68a 62%); color:inherit; padding:0 2px; }
+
+  /* 結論カード */
+  .verdict{
+    margin-top:26px;
+    background:linear-gradient(135deg,#f0f9ff 0%, #eff6ff 100%);
+    border:1px solid #bae6fd; border-left:5px solid var(--sky);
+    border-radius:var(--radius);
+    padding:22px 24px;
+    box-shadow:var(--shadow);
+  }
+  /* ◇付きタイトル：結論に限らず「実例」「ポイント」等でも使える。本文と同サイズ（§10.4.1⑤）＋下線でタイトルと本文を区切る */
+  .verdict .k{
+    display:flex; align-items:center; gap:8px;
+    font-size:16px; letter-spacing:.02em; font-weight:700; color:var(--navy);
+    padding-bottom:10px; margin-bottom:14px;
+    border-bottom:1px solid #bae6fd;
+  }
+  .verdict .k::before{
+    content:"◇"; color:var(--sky); font-weight:800;
+  }
+  .verdict p{ margin-top:0; font-size:16px; line-height:1.85; }
+  .verdict .big{ color:var(--sky); font-weight:800; font-size:clamp(22px,4vw,28px); margin:0 2px; }
+
+  /* 2点比較カード */
+  .duo{ margin-top:24px; display:grid; grid-template-columns:repeat(2,1fr); gap:14px; }
+  .duo .b{
+    background:#fff; border:1px solid var(--line-soft); border-radius:var(--radius);
+    padding:20px 20px; box-shadow:var(--shadow);
+    position:relative; padding-left:60px;
+  }
+  .duo .b .num{
+    position:absolute; left:18px; top:18px;
+    width:30px; height:30px; border-radius:50%;
+    background:var(--navy); color:#fff; font-weight:800; font-size:14px;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .duo .b .t{ font-size:16px; font-weight:700; color:var(--navy); line-height:1.5; }
+  .duo .b .d{ font-size:14px; color:var(--sub); margin-top:8px; line-height:1.75; }
+
+  /* インサイト */
+  .insight{
+    margin-top:22px; display:flex; gap:14px; align-items:flex-start;
+    background:#fffbeb; border:1px solid #fde68a; border-radius:var(--radius);
+    padding:18px 20px;
+  }
+  .insight .ico{
+    flex:none; width:28px; height:28px; border-radius:50%; background:#fbbf24; color:#fff;
+    display:flex; align-items:center; justify-content:center; font-weight:800; font-size:14px;
+  }
+  .insight p{ font-size:15px; line-height:1.8; }
+  .insight .k{ color:#92400e; font-weight:700; }
+  /* 黄色背景（.insight）内では紺・水色を使わない。強い強調＝アンバー／次レベル＝濃いめのグレー */
+  .insight .strong{ color:#b45309; }
+  .insight .em{ color:#b45309; }
+  /* insight内の「絶対に守るN点」＝アンバー番号チップ付きリスト（赤・緑は使わない） */
+  .insight .must3{ list-style:none; margin:11px 0 0; padding:0; display:grid; gap:8px; }
+  .insight .must3 li{ position:relative; padding-left:28px; font-size:15px; line-height:1.7; color:var(--ink); }
+  .insight .must3 li .n{ position:absolute; left:0; top:2px; width:19px; height:19px; border-radius:5px; background:#f59e0b; color:#fff; font-size:11px; font-weight:800; display:flex; align-items:center; justify-content:center; }
+
+  /* セクション内2カラム */
+  .split{ margin-top:22px; display:grid; grid-template-columns:1fr 1fr; gap:24px; align-items:center; }
+  .split.fig-left{ grid-template-columns: 320px 1fr; }
+
+  /* 図表カード（SVG図・円グラフ用）。円グラフは凡例を使わず、ラベル・数値を図の中に入れる（.claude/rules/円グラフの使い方.md） */
+  .chart-card{
+    background:#fff; border:1px solid var(--line-soft); border-radius:var(--radius);
+    padding:20px; box-shadow:var(--shadow);
+  }
+  /* 図のタイトル・解説（「図が示すこと」）は本文と同サイズ・本文色。サブテキスト扱いにしない */
+  .chart-card .cap{
+    font-size:16px; color:var(--ink); border-bottom:1px dotted var(--line);
+    padding-bottom:10px; margin-bottom:14px; line-height:1.7;
+  }
+  .chart-card .cap b{ color:var(--navy); font-weight:700; }
+  /* 出典・単位だけをサブテキストにする */
+  .chart-card .src{ font-size:12px; color:var(--mute); margin-top:12px; line-height:1.6; }
+  /* 円グラフ：横並びの凡例は使わない。全カテゴリの名称＋％を各スライス内に直接描く（濃紺上は白=.on-dark／淡色上は紺=.on-light） */
+  .pie-fig{ display:flex; justify-content:center; margin:6px 0 2px; }
+  .pie-fig svg{ width:100%; max-width:220px; height:auto; }
+  .pie-fig .pie-name{ font-weight:700; font-size:15px; }
+  .pie-fig .pie-pct{ font-weight:800; font-size:22px; }
+  .pie-fig .on-dark{ fill:#fff; }
+  .pie-fig .on-light{ fill:var(--navy); }
+  /* 活用場面カード（ラベル＋アウトラインアイコン・写真なし）：薄い水色背景＋スカイ枠。3列（スマホ2列） */
+  .uc-grid{ margin-top:16px; display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+  .uc{ display:flex; align-items:center; gap:10px; background:var(--card-sky); border:1px solid var(--sky);
+       color:var(--navy); font-weight:700; font-size:14px; padding:12px 14px; border-radius:10px; line-height:1.4; }
+  .uc svg{ flex:none; width:22px; height:22px; stroke:var(--sky); fill:none;
+           stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+
+  /* テーブル */
+  table.tbl{
+    width:100%; border-collapse:separate; border-spacing:0;
+    margin-top:22px; font-size:14.5px; border:1px solid var(--line);
+    border-radius:var(--radius); overflow:hidden;
+    box-shadow:var(--shadow);
+  }
+  table.tbl th, table.tbl td{
+    padding:12px 14px; text-align:left; vertical-align:middle; line-height:1.65;
+    border-bottom:1px solid var(--line-soft);
+  }
+  /* 左見出し列を狭くしたいとき：table-layout を fixed にして thead th の width 指定を効かせる
+     （既定は auto で、下の tbody th の width:25% が優先され列指定が無視されるため）。
+     使い方：<table class="tbl tbl-stack fixed"> ＋ thead の th に width を指定。例：企業のAI活用レベル表 */
+  table.tbl.fixed{ table-layout:fixed; }
+  table.tbl thead th{
+    background:var(--card); color:var(--navy); font-weight:700; font-size:13px;
+    letter-spacing:.05em; border-bottom:2px solid var(--navy);
+  }
+  table.tbl tbody th{
+    background:#fff; color:var(--navy); font-weight:700; white-space:nowrap; width:25%;
+    border-right:1px solid var(--line-soft);
+  }
+  table.tbl tbody tr:last-child th,
+  table.tbl tbody tr:last-child td{ border-bottom:none; }
+  table.tbl .hl{ color:var(--sky); font-weight:700; }
+  /* セル内で複数項目を並べるときは、スラッシュ区切りにせず ul.tl の箇条書きにする */
+  table.tbl td ul.tl,
+  .lc ul.tl{ list-style:none; margin:0; padding:0; display:grid; gap:6px; }
+  table.tbl td ul.tl li,
+  .lc ul.tl li{ position:relative; padding-left:16px; line-height:1.6; }
+  table.tbl td ul.tl li::before,
+  .lc ul.tl li::before{ content:""; position:absolute; left:2px; top:9px; width:6px; height:6px; border-radius:2px; background:var(--sky); }
+  /* 箇条書きに添える補足文（例：能力要素に対する定義） */
+  table.tbl td .tl-note,
+  .lc .tl-note{ display:block; margin-top:9px; color:var(--sub); font-size:13px; line-height:1.7; }
+  /* まとめ行（合計など）：薄水色で強調（指示文ボックスと同色 --card-sky）。強調は行1本に絞る */
+  table.tbl tbody tr.row-total th,
+  table.tbl tbody tr.row-total td{ background:var(--card-sky); color:var(--navy); }
+
+  /* ===== レベルカード：色分けは「レベルバッジ」の背景だけ（カードは白地＝広範囲の濃色を使わない）。
+     本文は行方式で、ラベルはグレー背景バッジ（固定幅で値を左揃え）。常に縦スタック＝モバイルも横スクロール無し ===== */
+  .lvl-cards{ margin-top:20px; display:flex; flex-direction:column; gap:12px; }
+  .lc{ border:1px solid var(--line-soft); border-radius:12px; background:#fff; box-shadow:var(--shadow); padding:14px 16px; }
+  .lc-head{ display:flex; align-items:center; gap:10px; padding-bottom:10px; margin-bottom:10px;
+    border-bottom:1px dotted var(--line-soft); flex-wrap:wrap; }
+  .lc-badge{ color:#fff; font-weight:800; font-size:12.5px; letter-spacing:.04em; border-radius:6px; padding:3px 11px; }
+  .lc-b1{ background:#5b9bd5; } .lc-b2{ background:#2f80bf; } .lc-b3{ background:#1e5fa0; }
+  .lc-b4{ background:#1e3a8a; } .lc-b5{ background:#14235c; }
+  .lc-title{ color:var(--navy); font-weight:800; font-size:15.5px; }
+  .lc-use{ color:var(--ink); line-height:1.7; font-size:14.5px; margin:0 0 8px; }
+  .lc-row{ display:flex; gap:10px; align-items:flex-start; padding:4px 0; }
+  .lc-lb{ flex:0 0 92px; background:var(--card); color:#475569; font-weight:700; font-size:12px;
+    text-align:center; padding:4px 8px; border-radius:5px; white-space:nowrap; }
+  .lc-val{ flex:1; color:var(--ink); font-weight:700; font-size:14px; line-height:1.7; }
+  /* 対比の表をカードに分解したとき用。値が文章になるので太字にしない（.lvl-cards.prose） */
+  .lvl-cards.prose .lc-val{ font-weight:400; font-size:14.5px; }
+  .lvl-cards.prose .lc-row{ padding:6px 0; }
+  .lvl-cards .lc > ul.tl{ margin-bottom:10px; }
+  @media (max-width:560px){
+    /* 狭い画面ではラベルを値の上に置く（92pxのバッジ幅を取ると本文が細くなるため） */
+    .lvl-cards.prose .lc-row{ flex-direction:column; gap:3px; }
+    .lvl-cards.prose .lc-lb{ flex:0 0 auto; align-self:flex-start; }
+  }
+
+  /* ===== ティアカード（人材レベル）：色は「役割バッジ」だけ（カードは白地）。役割バッジは中央配置＋PCで上ほど幅を絞りピラミッド感。
+     本文は行方式（レベルカードと同じ .lc-row／.lc-lb／.lc-val を流用）。モバイルは全幅で縦積み ===== */
+  .tiers{ position:relative; margin-top:20px; overflow:hidden; border-radius:12px;
+    background:#fff; padding:20px 22px; }
+  .tiers .pyramid{ position:absolute; inset:0; width:100%; height:100%; z-index:0; pointer-events:none; }
+  .tiers .pyramid polygon{ fill:#e0f2fe; }   /* 薄い水色・単色の▲背景（1枚のカード内に敷く。上=少数→下=多数） */
+  .tiers .tier{ position:relative; z-index:1; }
+  .tier-sep{ position:relative; z-index:1; border:none; border-top:1px dotted var(--line); margin:16px 0; }
+  .trole{ text-align:center; margin-bottom:12px; }
+  /* 行（できること／組織での役割）は最大幅を決めて中央寄せ＝中央のバッジとツラを合わせる（全幅カードで左寄りに見えるのを防ぐ） */
+  .tiers .lc-row{ max-width:640px; margin-left:auto; margin-right:auto; }
+  .tbadge{ display:inline-block; color:#fff; font-weight:800; font-size:14px; border-radius:8px; padding:5px 16px; }
+  .tbadge .tlv{ background:rgba(255,255,255,.24); border-radius:5px; padding:1px 8px; margin-right:9px; font-size:12.5px; }
+  .tier.t-leader .tbadge{ background:var(--navy); }
+  .tier.t-follower .tbadge{ background:#2f80bf; }
+  .tier.t-non .tbadge{ background:#64748b; }
+  @media (max-width:560px){ .tiers{ padding:16px; } }
+
+  /* スクショ */
+  .shots{ margin-top:22px; display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+  .shots.solo{ grid-template-columns:1fr; max-width:560px; margin-left:auto; margin-right:auto; }
+  .shot{
+    background:#fff; border:1px solid var(--line-soft); border-radius:var(--radius);
+    padding:14px; box-shadow:var(--shadow);
+  }
+  .shot img{
+    width:100%; display:block; border:1px solid var(--line-soft); border-radius:4px;
+  }
+  .shot-cap{ font-size:13px; color:var(--sub); margin-top:10px; line-height:1.7; }
+  .shot-cap b{ color:var(--navy); font-weight:700; }
+  .shot.ok{ border-top:3px solid var(--sky); }
+  .shot.ng{ border-top:3px solid #94a3b8; }
+
+  /* ステップ */
+  .steps{ margin-top:22px; display:grid; grid-template-columns:repeat(5,1fr); gap:10px; }
+  .step{
+    background:#fff; border:1px solid var(--line-soft); border-radius:var(--radius);
+    padding:16px 12px; text-align:center; box-shadow:var(--shadow);
+    position:relative;
+  }
+  .step .n{
+    width:28px; height:28px; border-radius:50%;
+    background:var(--navy); color:#fff; font-weight:800; font-size:13px;
+    display:flex; align-items:center; justify-content:center; margin:0 auto 10px;
+  }
+  .step .t{ font-size:14px; font-weight:700; color:var(--navy); line-height:1.4; }
+  .step .d{ font-size:12px; color:var(--mute); margin-top:6px; line-height:1.5; }
+
+  /* 3原則 */
+  .rules{ margin-top:22px; display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+  .rule{
+    background:#fff; border:1px solid var(--line-soft); border-top:3px solid var(--sky);
+    border-radius:var(--radius); padding:18px 18px; box-shadow:var(--shadow);
+  }
+  .rule .l{ font-size:11px; letter-spacing:.14em; color:var(--sky); font-weight:700; }
+  .rule .t{ font-size:17px; font-weight:800; color:var(--navy); margin-top:6px; line-height:1.4; }
+  .rule .d{ font-size:13.5px; color:var(--sub); margin-top:10px; line-height:1.8; }
+
+  /* 4アクション */
+  .actions{ margin-top:22px; display:grid; grid-template-columns:repeat(2,1fr); gap:14px; }
+  .action{
+    background:#fff; border:1px solid var(--line-soft); border-radius:var(--radius);
+    padding:18px 20px 18px 64px; box-shadow:var(--shadow); position:relative;
+  }
+  .action .n{
+    position:absolute; left:18px; top:18px; width:32px; height:32px; border-radius:8px;
+    background:linear-gradient(135deg, var(--navy) 0%, var(--sky) 100%);
+    color:#fff; font-weight:800; font-size:14px;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .action .t{ font-size:16px; font-weight:800; color:var(--navy); line-height:1.4; }
+  .action .d{ font-size:13.5px; color:var(--sub); margin-top:8px; line-height:1.75; }
+
+  /* Q&A */
+  .qa{ margin-top:22px; }
+  .qa .q{
+    display:flex; gap:12px; align-items:flex-start; padding:14px 0;
+    border-top:1px solid var(--line-soft);
+  }
+  .qa .q:last-child{ border-bottom:1px solid var(--line-soft); }
+  .qa .lab{
+    flex:none; width:28px; height:28px; border-radius:6px;
+    background:var(--navy); color:#fff; font-weight:800; font-size:13px;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .qa .lab.a{ background:var(--sky); }
+  .qa .tx{ flex:1; font-size:14.5px; line-height:1.85; }
+  .qa .tx.q-tx{ font-weight:700; color:var(--navy); }
+
+  /* 免責バー */
+  .disclaimer{
+    background:#fafbfc; border-bottom:1px solid var(--line-soft);
+    padding:14px 0;
+  }
+  .disclaimer p{
+    width:var(--wrap); margin:0 auto;
+    font-size:12px; color:var(--mute); line-height:1.75;
+  }
+
+  /* 目次へ戻る */
+  .back-to-toc{
+    position:fixed; right:20px; bottom:24px; z-index:100;
+    display:inline-flex; align-items:center; gap:8px;
+    padding:11px 18px; border-radius:999px;
+    background:var(--navy); color:#fff;
+    font-size:13px; font-weight:700; letter-spacing:.04em;
+    box-shadow:0 8px 22px rgba(15,23,42,.25);
+    opacity:0; visibility:hidden; transform:translateY(8px);
+    transition: opacity .25s ease, transform .25s ease, visibility .25s;
+  }
+  .back-to-toc.show{ opacity:1; visibility:visible; transform:translateY(0); }
+  .back-to-toc:hover{ background:#152d6b; text-decoration:none; }
+  .back-to-toc .ico{ width:14px; height:14px; }
+  @media print { .back-to-toc{ display:none !important; } }
+
+  /* フッター */
+  .page-foot{
+    background:#fff; border-top:1px solid var(--line-soft);
+    padding:22px 0;
+    text-align:center;
+  }
+  .page-foot p{
+    width:var(--wrap); margin:0 auto;
+    font-size:12px; color:var(--mute); line-height:1.7;
+  }
+  .page-foot a{ color:var(--mute); }
+  .page-foot a:hover{ color:var(--sky); }
+
+  /* まとめ */
+  .closing{
+    margin-top:48px; padding:56px 0;
+    background:#fff; color:var(--ink);
+    border-top:1px solid var(--line);
+  }
+  .closing-inner{ width:var(--wrap); margin:0 auto; text-align:center; }
+  .closing .eyebrow{
+    font-size:12px; letter-spacing:.18em; color:var(--sky); font-weight:700;
+    text-transform:uppercase;
+  }
+  .closing h2{
+    margin-top:14px; font-size:clamp(22px,4vw,28px); font-weight:800; line-height:1.5;
+    letter-spacing:.005em; color:var(--navy);
+  }
+  .closing h2 .hl{ color:var(--sky); }
+  .closing p{
+    margin-top:18px; font-size:15px; line-height:1.95; color:var(--sub); max-width:640px;
+    margin-left:auto; margin-right:auto;
+  }
+
+  /* レスポンシブ */
+  @media (max-width: 720px){
+    .split{ grid-template-columns:1fr; }
+    .split.fig-left{ grid-template-columns:1fr; }
+    .shots{ grid-template-columns:1fr; max-width:560px; margin-left:auto; margin-right:auto; }
+    .steps{ grid-template-columns:repeat(2,1fr); }
+    .rules{ grid-template-columns:1fr; }
+    .actions{ grid-template-columns:1fr; }
+    table.tbl tbody th{ width:30%; }
+  }
+  @media (max-width: 560px){
+    section.s{ padding:48px 0 0; }
+    .toc ol{ columns:1; }
+    .duo{ grid-template-columns:1fr; }
+    .uc-grid{ grid-template-columns:repeat(2,1fr); }
+  }
+
+  /* 表のラベル列：スマホでラベルを折り返し、th が幅を取りすぎないように */
+  table.tbl th .artno{ font-weight:700; }
+  @media (max-width:560px){ table.tbl th .artno{ display:block; margin-bottom:1px; } }
+  /* 4項目カードは2列×2行（3項目は既定の3列のまま） */
+  .rules.cols2{ grid-template-columns:repeat(2,1fr); }
+  @media (max-width:640px){ .rules.cols2{ grid-template-columns:1fr; } }
+  /* table.tbl に tbl-stack を付けると、スマホで1カラムに縦積み（thead は中身に関係なく消える）。
+     どの表に使ってよいかの判断基準は README §10.4.1⑨（「thead を隠して読む」テスト）。
+     data-label="（列見出し）" を付けた <td> だけ、::before でその文字列を値の上に出す。 */
+  @media (max-width: 620px){
+    table.tbl-stack thead{ display:none; }
+    table.tbl-stack, table.tbl-stack tbody, table.tbl-stack tr, table.tbl-stack th, table.tbl-stack td{ display:block; width:100%; }
+    table.tbl-stack tbody tr{ border-bottom:1px solid var(--line-soft); }
+    table.tbl-stack tbody tr:last-child{ border-bottom:none; }
+    table.tbl-stack tbody th{ width:100%; background:var(--card); color:var(--navy); font-weight:700; border-right:none; border-bottom:none; padding:12px 14px 4px; }
+    table.tbl-stack tbody td{ padding:2px 14px 12px; }
+    table.tbl-stack tbody td::before{
+      content: attr(data-label);
+      display:block;
+      font-size:11.5px; font-weight:800; letter-spacing:.04em;
+      color:var(--sky); margin-bottom:2px;
+    }
+    table.tbl-stack tbody td:not([data-label])::before{ content:none; }
+  }
+
+/* ============================================================================
+   シリーズ構成（hub-and-spoke）専用クラス ─ web版に追加する差分CSS
+   ----------------------------------------------------------------------------
+   使い方：シリーズの共有 style.css は
+     ① template_web.html の <style>…</style> の中身をそのまま貼り
+     ② この series_extra.css を末尾に連結する
+   の2段で作る（単発web版の見た目をそのまま継承しつつ、回遊ナビだけ足す）。
+   ※ :root 変数・.topbar・.hero-light・.author-box・.toc・組版パーツ等は
+     template_web.html 側に定義済み。ここでは「シリーズ回遊」に必要な分だけ。
+   ============================================================================ */
+
+/* 各回ページ上部：パンくず（シリーズ目次 › この回のタイトル） */
+.crumb{ width:var(--wrap); margin:0 auto; padding:13px 0; font-size:12.5px; color:var(--mute); letter-spacing:.02em; line-height:1.7; }
+.crumb a{ color:var(--sky); font-weight:700; text-decoration:underline; text-underline-offset:2px; }
+.crumb a:hover{ color:var(--sky); }
+.crumb .sep{ margin:0 9px; color:var(--line); }
+.crumb .here{ color:var(--ink); font-weight:700; }
+
+/* 各回ページ下部：シリーズ目次に戻る（回同士は直接リンクせず、必ずハブ経由で回遊する） */
+.foot-nav{ width:var(--wrap); margin:0 auto; padding:32px 0 12px; text-align:center; }
+.foot-nav a{ display:inline-flex; align-items:center; gap:8px; padding:12px 26px; border-radius:999px; background:var(--card-sky); border:1px solid #bae6fd; color:var(--navy); font-weight:800; font-size:13px; letter-spacing:.03em; line-height:1.5; }
+.foot-nav a:hover{ background:#e0f2fe; text-decoration:none; }
+@media (max-width:560px){ .foot-nav a{ font-size:12px; padding:11px 18px; } }
+
+/* ハブ index：各回カードの一覧 */
+.hero-light h1.series-title{ white-space:normal; }   /* シリーズ名は改行可（単発h1のnowrapを解除） */
+.series-list{ width:var(--wrap); margin:0 auto; padding:8px 0 44px; display:grid; gap:14px; }
+/* 「解説テーマ」見出し（講師紹介と同じ author-label スタイル。カード一覧の直前に必ず置く） */
+.series-list .list-label{ margin:10px 0 4px; }
+.ep-card{
+  display:grid; grid-template-columns:1fr auto; gap:18px; align-items:center;
+  background:#fff; border:1px solid var(--line-soft); border-radius:var(--radius);
+  padding:18px 22px; box-shadow:var(--shadow);
+  text-decoration:none; color:inherit;
+  transition:border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+.ep-card:hover{ border-color:var(--sky); transform:translateY(-1px);
+  box-shadow:0 2px 4px rgba(15,23,42,.05),0 8px 22px rgba(15,23,42,.09); text-decoration:none; }
+.ep-body .et{ font-size:17px; font-weight:800; color:var(--navy); line-height:1.6; }
+.ep-body .es{ font-size:13.5px; color:var(--sub); margin-top:7px; line-height:1.7; }
+.ep-go{ font-size:13px; font-weight:700; color:var(--sky); white-space:nowrap; }
+
+/* カード左のアクセントバッヂ（各回カードの .et 先頭に置く。全カードに必ず付ける）
+   ・番号を出す場合   ： <span class="ep-tag">第N回</span> … 文字入りの角丸ピル
+   ・番号を出さない場合： <span class="ep-tag mark"></span> … 中身空白の角丸四角（同じ配色の小マーク） */
+.ep-tag{ display:inline-block; vertical-align:middle; background:linear-gradient(135deg,var(--navy) 0%, var(--sky) 100%); color:#fff; font-weight:800; font-size:12px; letter-spacing:.04em; padding:3px 11px; border-radius:6px; margin-right:11px; white-space:nowrap; }
+.ep-tag.mark{ width:14px; height:14px; padding:0; border-radius:4px; }
+
+@media (max-width:560px){
+  .ep-card{ grid-template-columns:1fr; }
+  .ep-card .ep-go{ justify-self:start; }
+  .ep-tag{ font-size:11px; padding:2px 9px; margin-right:8px; }
+  .ep-tag.mark{ width:12px; height:12px; padding:0; margin-right:8px; }
+}
+
+
+/* ============================================================================
+   この講座（5499 AIセキュリティ）固有の追加パーツ
+   ─ 最新テンプレCSS（上）に無い部品だけを補う。トンマナはテンプレに準拠。
+   ============================================================================ */
+
+/* セクション背景の交互（偶数章で使う） */
+section.s.alt{ background:#fafcff; border-top:1px solid var(--line-soft); border-bottom:1px solid var(--line-soft); }
+
+/* 判定バッジ（クイズの ○ × △。ネガティブは赤でなくスレート） */
+.badge{ display:inline-flex; align-items:center; justify-content:center; min-width:44px; padding:2px 10px; border-radius:6px; font-weight:800; font-size:13px; line-height:1.4; letter-spacing:.02em; }
+.badge.ok{ background:var(--sky); color:#fff; }
+.badge.ng{ background:var(--sub); color:#fff; }
+.badge.mid{ background:#e0f2fe; color:var(--sky); border:1px solid var(--sky); }
+
+/* クイズ表：判定を設問セルに同居（スマホでの長文可読性） */
+table.quiz-tbl tbody th{ white-space:normal; width:42%; vertical-align:top; }
+table.quiz-tbl tbody td{ vertical-align:top; }
+table.quiz-tbl .qj{ margin-bottom:8px; }
+@media (max-width:720px){ table.quiz-tbl tbody th{ width:40%; } }
+
+/* 表の補足注記・中央寄せセル */
+.tbl-note{ font-size:12px; color:var(--mute); margin-top:10px; line-height:1.7; }
+table.tbl td.c, table.tbl th.c{ text-align:center; }
+
+/* 横棒比較バー */
+.bars{ margin-top:22px; }
+.bar-row{ margin:14px 0; }
+.bar-row .lb{ font-size:13.5px; color:var(--ink); font-weight:700; margin-bottom:6px; display:flex; justify-content:space-between; }
+.bar-row .lb .v{ color:var(--navy); font-weight:800; }
+.bar-track{ background:var(--card); border-radius:999px; height:18px; overflow:hidden; border:1px solid var(--line-soft); }
+.bar-fill{ height:100%; border-radius:999px; }
+.bar-fill.a{ background:linear-gradient(90deg,var(--sky),var(--sky-2)); }
+.bar-fill.b{ background:linear-gradient(90deg,var(--navy),var(--navy-2)); }
+.fig-note{ font-size:12px; color:var(--mute); margin-top:12px; line-height:1.7; }
+
+/* 数値カード（金額など・控えめなスレート枠。強調色にしない） */
+.stats3{ margin-top:22px; display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+.stat{ background:#fff; border:1px solid var(--line-soft); border-top:3px solid var(--sub); border-radius:var(--radius); padding:18px 16px; text-align:center; box-shadow:var(--shadow); }
+.stat .amt{ font-size:clamp(21px,4vw,27px); font-weight:800; color:var(--navy); line-height:1.2; }
+.stat .cap{ font-size:12.5px; color:var(--sub); margin-top:9px; line-height:1.7; }
+.stat .cap b{ color:var(--ink); font-weight:700; }
+@media (max-width:720px){ .stats3{ grid-template-columns:1fr; } }
+
+/* 3ステップ版（テンプレ既定 .steps は5列。3列で使う） */
+.steps.s3{ grid-template-columns:repeat(3,1fr); }
+@media (max-width:560px){ .steps.s3{ grid-template-columns:1fr; } }
+
+/* 原則カード内のチェックリスト（ep4のA/B/C） */
+.rule .chk{ list-style:none; margin:12px 0 0; padding:0; }
+.rule .chk li{ font-size:13.5px; color:var(--sub); line-height:1.7; position:relative; padding-left:18px; margin-top:9px; }
+.rule .chk li:first-child{ margin-top:0; }
+.rule .chk li::before{ content:""; position:absolute; left:0; top:8px; width:6px; height:6px; border:1.5px solid var(--sky); border-radius:2px; }
+
+/* コードふう表示（.env / settings.json 等） */
+code.k{ background:var(--card); border:1px solid var(--line-soft); border-radius:5px; padding:1px 7px; font-family:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace; font-size:13px; color:var(--navy); }
+
+/* 図キャプション：この講座のSVG図は説明キャプションを本文色で（テンプレ .chart-card .cap を踏襲） */
+.chart-card svg{ width:100%; height:auto; display:block; }
+
+/* クイズ：2×2カード（問い → ○×判定 → 解説 の順） */
+.quiz-grid{ margin-top:22px; display:grid; grid-template-columns:repeat(2,1fr); gap:14px; }
+.quiz-card{ background:#fff; border:1px solid var(--line-soft); border-radius:var(--radius); padding:20px 22px; box-shadow:var(--shadow); }
+.quiz-card .q{ font-size:15px; font-weight:800; color:var(--navy); line-height:1.6; }
+.quiz-card .verdict-row{ display:flex; align-items:center; gap:10px; margin:12px 0; padding:11px 0; border-top:1px dotted var(--line-soft); border-bottom:1px dotted var(--line-soft); }
+.quiz-card .vlabel{ font-size:13px; font-weight:800; color:var(--sub); letter-spacing:.02em; }
+.quiz-card .why{ font-size:14px; color:var(--sub); line-height:1.85; }
+@media (max-width:640px){ .quiz-grid{ grid-template-columns:1fr; } }
+
+/* ============================================================================
+   活用例ボックス（指示文＋自律実行フロー）／小見出し h4／複数h2の区切り
+   ※HTML例・使い分けは README §10.4.2 が正
+   ============================================================================ */
+/* 活用例ボックス：指示文＋自律実行フローを1枠でくくる（ヘッダー無し＝指示文ボックスと差別化）。
+   内包するのは [指示文ボックス .ask, フローラベル .flowlab, フロー .flow] のみ（余分な要素を入れない） */
+.exbox{ margin-top:12px; background:#fff; border:1px solid var(--line-soft); border-radius:var(--radius); box-shadow:var(--shadow); padding:16px 18px; }
+.exbox .ask{ margin-top:0; }
+/* 指示文＝入力欄風のさりげないボックス。先頭に控えめな「指示文」バッヂ */
+.ask{ margin-top:8px; }
+.ask .field{ background:var(--card-sky); border:1px solid #bae6fd; border-radius:12px; padding:14px 16px; }
+.ask .field .frow{ display:flex; align-items:flex-start; gap:10px; }
+.ask .field .badge{ flex:none; font-size:11px; font-weight:700; color:var(--sub); background:#fff; border:1px solid var(--line); border-radius:6px; padding:3px 9px; letter-spacing:.04em; margin-top:2px; }
+.ask .field .txt{ flex:1; font-size:15.5px; line-height:1.9; color:var(--ink); }
+/* fcol は fnote（結果/注意リスト）を添えるときだけ入れる。無い時は frow 直下に badge+txt だけ（fcol無し＝閉じタグずれ防止） */
+.ask .field .fcol{ flex:1 1 auto; min-width:0; }
+.ask .field .fcol .txt{ display:block; }
+.ask .field .fnote{ margin-top:12px; padding-top:11px; border-top:1px solid var(--line-soft); }
+.ask .field .fnote ul{ list-style:none; margin:0; padding:0; display:grid; gap:8px; }
+.ask .field .fnote li{ position:relative; padding-left:17px; font-size:14px; color:var(--ink); line-height:1.8; }
+.ask .field .fnote li::before{ content:""; position:absolute; left:2px; top:9px; width:6px; height:6px; border-radius:2px; background:var(--sky); }
+.ask .field .fnote li.warn::before{ background:var(--sub); }
+.ask .field .fnote .lb{ color:var(--sky); margin-right:5px; }
+.ask .field .fnote li.warn .lb{ color:var(--sub); }
+.ask .field .fnote .strong{ color:var(--ink); font-weight:400; }
+/* 自律実行フロー（線画3ステップ・全画面スクショの代替）。1ステップ＝アイコン＋短い見出し＋補足 */
+.flowlab{ font-size:11.5px; font-weight:800; letter-spacing:.06em; color:var(--mute); margin:18px 0 10px; }
+.flow{ display:flex; flex-wrap:wrap; align-items:stretch; gap:8px; }
+.flow .fstep{ flex:1 1 0; min-width:148px; background:#fff; border:1px solid var(--line-soft); border-top:2px solid var(--sky); border-radius:10px; padding:14px 12px; text-align:center; }
+.flow .fstep .fi{ width:42px; height:42px; margin:0 auto 9px; border:1.5px solid #bae6fd; border-radius:11px; display:flex; align-items:center; justify-content:center; color:var(--sky); }
+.flow .fstep .fi svg{ width:22px; height:22px; }
+.flow .fstep .ft{ font-size:13.5px; font-weight:700; color:var(--navy); line-height:1.45; }
+.flow .fstep .fd{ font-size:12px; color:var(--sub); margin-top:5px; line-height:1.6; }
+.flow .farr{ align-self:center; color:var(--sky); font-weight:800; font-size:18px; }
+@media(max-width:620px){ .flow{ flex-direction:column; } .flow .farr{ transform:rotate(90deg); } }
+
+/* 小見出し（h3 .s-sub の下位＝h4）：活用例タイトルなど。「活用例｜タイトル」の形で使う */
+h4.s-sub2{ margin-top:28px; margin-bottom:4px; font-size:16px; font-weight:800; color:var(--navy); line-height:1.5; display:flex; align-items:center; gap:9px; }
+h4.s-sub2::before{ content:""; flex:none; width:9px; height:9px; background:var(--sky); border-radius:2px; }
+
+/* 1セクション内の2つ目以降の h2（スライド的な区切り）。目次には出さず、余白のみで段落を割る（hrは引かない） */
+.s-inner h2.s-h.slide-break{ margin-top:52px; }
+
+/* ── スマホではヒーローの見出し・サブタイトルの改行を許す ──
+   nowrap のままだと、長いタイトル・サブタイトルが画面外へはみ出し、
+   ページ全体に横スクロールが出る（.claude/rules/モバイル読みやすさ優先.md）。
+   h1.series-title で既に使っている white-space:normal と同じ手当て。 */
+@media (max-width:620px){
+  .hero-light .sub{ white-space:normal; }
+  .hero-light h1{ white-space:normal; }
+}
+
+/* ── ヒーロー直下「このセミナーの要点」（.hero-points）──
+   冒頭リードが数文つながると、要点がいくつあるか一目で分からない。
+   3行に割って先に見せ、「30秒だけ見る人」も要点を持ち帰れるようにする。
+   惹句 .catch-hook と同じことを書かない（役割が重なると情報が1つ減る）。 */
+.hero-points{
+  margin-top:20px; padding:16px 18px;
+  background:var(--card-sky); border:1px solid #bae6fd; border-radius:var(--radius);
+}
+.hero-points .hp-label{
+  font-size:12px; font-weight:800; color:var(--navy);
+  letter-spacing:.12em; line-height:1.4; margin-bottom:10px;
+}
+.hero-points ol{ list-style:none; display:grid; gap:9px; }
+.hero-points li{
+  position:relative; padding-left:30px;
+  font-size:15px; line-height:1.75; color:var(--ink); font-weight:500;
+}
+.hero-points li .n{
+  position:absolute; left:0; top:4px;
+  width:20px; height:20px; border-radius:5px;
+  background:var(--sky); color:#fff; font-size:11px; font-weight:800;
+  display:flex; align-items:center; justify-content:center;
+}
+@media (max-width:560px){
+  .hero-points{ padding:14px 15px; }
+  .hero-points li{ font-size:14.5px; padding-left:27px; }
+}
+
+/* ── 要点の下「動画で見る」（.hero-video）──
+   短縮動画（Doganize Live の音声入りHTML）を、同じ公開フォルダの short-5min.html・short-15min.html で開く。
+   短縮動画を作っていない回は <div class="hero-video"> ごと消す */
+.hero-video{
+  margin-top:14px; padding:14px 18px;
+  background:#fff; border:1px solid var(--line); border-radius:var(--radius);
+}
+.hero-video .hv-label{
+  font-size:12px; font-weight:800; color:var(--navy);
+  letter-spacing:.12em; line-height:1.4;
+}
+.hero-video .hv-note{ margin:4px 0 12px; font-size:14px; line-height:1.7; color:var(--sub); }
+.hero-video .hv-links{ display:flex; flex-wrap:wrap; gap:10px; }
+.hero-video .hv-links a{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:10px 20px; border-radius:999px;
+  background:var(--navy); color:#fff; text-decoration:none;
+  font-size:15px; font-weight:700; line-height:1.4;
+}
+.hero-video .hv-links a:hover{ background:var(--navy-2); }
+.hero-video .hv-links a span{ font-size:12.5px; font-weight:500; opacity:.85; }
+.hero-video .ico{ width:13px; height:13px; flex:none; }
+@media (max-width:560px){
+  .hero-video{ padding:13px 15px; }
+  .hero-video .hv-links a{ flex:1 1 100%; justify-content:center; }
+}
