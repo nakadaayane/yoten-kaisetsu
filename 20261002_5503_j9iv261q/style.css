@@ -713,3 +713,30 @@ h4.s-sub2::before{ content:""; flex:none; width:9px; height:9px; background:var(
   .hero-points{ padding:14px 15px; }
   .hero-points li{ font-size:14.5px; padding-left:27px; }
 }
+
+/* ── 要点の下「動画で見る」（.hero-video）──
+   短縮動画（Doganize Live の音声入りHTML）を、同じ公開フォルダの short-5min.html・short-15min.html で開く。
+   短縮動画を作っていない回は <div class="hero-video"> ごと消す */
+.hero-video{
+  margin-top:14px; padding:14px 18px;
+  background:#fff; border:1px solid var(--line); border-radius:var(--radius);
+}
+.hero-video .hv-label{
+  font-size:12px; font-weight:800; color:var(--navy);
+  letter-spacing:.12em; line-height:1.4;
+}
+.hero-video .hv-note{ margin:4px 0 12px; font-size:14px; line-height:1.7; color:var(--sub); }
+.hero-video .hv-links{ display:flex; flex-wrap:wrap; gap:10px; }
+.hero-video .hv-links a{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:10px 20px; border-radius:999px;
+  background:var(--navy); color:#fff; text-decoration:none;
+  font-size:15px; font-weight:700; line-height:1.4;
+}
+.hero-video .hv-links a:hover{ background:var(--navy-2); }
+.hero-video .hv-links a span{ font-size:12.5px; font-weight:500; opacity:.85; }
+.hero-video .ico{ width:13px; height:13px; flex:none; }
+@media (max-width:560px){
+  .hero-video{ padding:13px 15px; }
+  .hero-video .hv-links a{ flex:1 1 100%; justify-content:center; }
+}
