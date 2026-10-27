@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<!--
+ セミナー要点解説 web版テンプレート（要点解説スキル）
+ ・{{…}} を埋める。中身の決まりは references/書き方の決まり.md、部品の選び方は同 6章
+ ・SECTION 01〜04 は部品の見本。使う部品だけ写して、見本の文言は全部消す（check.py が残りを止める）
+ ・黄色マーカー <mark> は hero-catch の中で1回だけ
+ ・前後編（シリーズ）は、まず回ごとに1ページずつ作る。まとめページ（ハブ）が要るときは仲田さんに聞く
+-->
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+<meta name="googlebot" content="noindex,nofollow,noarchive,nosnippet">
+<meta name="referrer" content="no-referrer">
+<title>採用に勝てない中小企業のための「AI時代の組織戦略」｜高野秀敏氏 セミナー要点</title>
+<meta name="description" content="株式会社キープレイヤーズ 高野秀敏氏のセミナーを縦スクロールで要点整理。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PHSWJV5');</script>
+<!-- End Google Tag Manager -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PHSWJV5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- ① 紺色帯ヘッダ -->
+<header class="topbar">
+  <div class="topbar-inner">全国経友会　セミナー要点解説</div>
+</header>
+
+<!-- ② 白背景ヒーロー -->
+<section class="hero-light">
+  <div class="hero-inner">
+    <p class="sub">178社の上場支援から見えた 採用と組織論</p>
+    <h1>採用に勝てない中小企業のための<br>AI時代の組織戦略</h1>
+    <p class="hero-meta">2026年10月2日 収録<span class="sep">／</span>セミナー番号 5503</p>
+    <!-- 導入：「人が採れない」と悩む前に、確かめておくことがあります。＝惹句（.catch-hook＝紺の太字リード）／{{HERO_CATCH}}＝導入本文。黄マーカー <mark> はこの段落で1回だけ（最も伝えたい1フレーズ）。本文セクションでは使わない。↓ <mark> はサンプル。実コンテンツに差し替える -->
+    <p class="hero-catch"><span class="catch-hook">「人が採れない」と悩む前に、確かめておくことがあります。</span>4,000名以上の経営者・幹部から採用の相談を受けてきた講師が、最初に確かめるのは採用の手法ではなく事業の構造です。中規模企業の平均で試算すると、年収400万円の人を紹介で1人採った場合、<mark>採用費を取り戻すまでに1年4か月かかります。</mark>人を入れても利益が出ない構造のまま採用を頑張ると、採れた分だけ苦しくなります。</p>
+
+    <!-- 「このセミナーの要点」3行：30秒だけ見る人が要点を持ち帰れるようにする（README §10.7）。
+         ・惹句 「人が採れない」と悩む前に、確かめておくことがあります。 と同じことを書かない。惹句＝何が変わったか／要点①＝具体的にどう動くか、と役割を分ける
+         ・3行は同じ抽象度で揃える（結論を並べる。行動形と結論形を混ぜない）
+         ・導入本文と語が重なるのは構わない（要約なので当然）。避けるのは惹句との重複だけ
+         ・不要なら <div class="hero-points"> ごと削除してよい -->
+    <div class="hero-points">
+      <div class="hp-label">このセミナーの要点</div>
+      <ol>
+        <li><span class="n">1</span>1人あたりの粗利が人件費の2倍に届いていなければ、採用より先に値段と仕事を見直す</li>
+        <li><span class="n">2</span>社長が最初の面談から出て、自分の時間の3割を採用にあてる</li>
+        <li><span class="n">3</span>入社後90日を紙1枚で設計し、初日の1時間で本人の持ち味を語ってもらう</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- 目次 -->
+<nav class="toc-wrap" aria-label="目次" id="toc">
+  <div class="toc">
+    <h2>目次</h2>
+    <ol>
+      <li><a href="#author">講師紹介</a></li>
+      <li><a href="#s1">採用の前に ― その事業は、人を入れたら儲かるか</a></li>
+      <li><a href="#s2">AIで変わったのは、会社の「見つけられ方」</a></li>
+      <li><a href="#s3">採用に勝てる会社は、社長が先頭に立っている</a></li>
+      <li><a href="#s4">AI時代の評価・給与 ― 量ではなく、役割と結果で</a></li>
+      <li><a href="#s5">入社後90日の設計と、「誰と一緒にやるか」</a></li>
+      <li><a href="#s6">経営者が始めること ― 今週・今月・3か月</a></li>
+    </ol>
+    <p class="toc-catch">※ 本資料はセミナー講演をAIで再構成したものです。記載の数値・見解は講演時点のものであり、特定の取り組みの結果を保証するものではありません。</p>
+  </div>
+</nav>
+
+<!-- 講師紹介 -->
+<section class="s" id="author">
+  <div class="s-inner">
+    <h2 class="author-label">講師紹介</h2>
+    <div class="author-box">
+      <img src="img/kou_0405.jpg" alt="高野 秀敏 氏">
+      <div>
+        <div class="aname">高野 秀敏<span class="suffix">氏</span></div>
+        <div class="aorg">株式会社キープレイヤーズ 代表取締役</div>
+        <p class="bio">インテリジェンス（現パーソルキャリア）を経て、2005年にキープレイヤーズを創業。東北大学特任教授（客員）、文部科学省アントレプレナーシップ推進大使。12,000人以上のキャリア面談と、4,000名以上の経営者・幹部からの採用・組織の相談に応じ、顧問・社外役員を30社以上務める。80社以上へのエンジェル投資で9社の上場を経験し、クラウドワークスとメドレーでは役員として上場。<span class="strong">上場支援は178社</span>。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ SECTION 01 ════════════ -->
+<section class="s" id="s1">
+  <div class="s-inner">
+    <div class="s-num">SECTION 01</div>
+    <h2 class="s-h">採用の前に ― その事業は、人を入れたら儲かるか</h2>
+    <p class="s-lead">採用の相談で講師が「これは難しい」と感じるのは、人を入れても売上も利益も上がらないケースです。逆に、人をしっかり採れば売上も利益も伸びる事業なら、講師の見立てでは<span class="strong">それだけで8割がた勝ち</span>です。まず、稼いだ付加価値のうち人件費に回る割合（労働分配率）を見ると、会社の規模で大きく違います。</p>
+    <div class="chart-card">
+      <div class="cap"><b>労働分配率（付加価値のうち人件費に回る割合）</b>　中小企業は8割近くが人件費に回っている</div>
+      <div class="bars">
+        <div class="bar-row"><div class="lb">小規模企業（資本金1千万円未満）<span class="v">80.0%</span></div><div class="bar-track"><div class="bar-fill b" style="width:80%"></div></div></div>
+        <div class="bar-row"><div class="lb">中規模企業（資本金1千万円以上1億円未満）<span class="v">76.9%</span></div><div class="bar-track"><div class="bar-fill b" style="width:76.9%"></div></div></div>
+        <div class="bar-row"><div class="lb">大企業（資本金10億円以上）<span class="v">48.2%</span></div><div class="bar-track"><div class="bar-fill a" style="width:48.2%"></div></div></div>
+      </div>
+      <div class="src">出典：中小企業庁「2025年版 中小企業白書・小規模企業白書の概要」（資料：財務省「法人企業統計調査年報」2023年度）</div>
+    </div>
+    <p class="s-lead">付加価値に占める営業利益の割合は、中小企業が8.3%、大企業が34.3%。この構造のまま人を1人増やしても、利益はほとんど残りません。</p>
+
+    <h3 class="s-sub"><span class="cn mark"></span>年収400万円の人を1人採ると、どうなるか</h3>
+    <p class="s-lead">講演では、中規模企業の平均で試算していました。その人が生む付加価値は年579万円、人件費（年収に会社負担の社会保険料などを足したもの）は約460万円で、残るのは年119万円です。</p>
+    <div class="stats3">
+      <div class="stat"><div class="amt">119万円</div><div class="cap">1人採って<b>1年に残る利益</b>（付加価値579万円−人件費460万円）</div></div>
+      <div class="stat"><div class="amt">160万円</div><div class="cap">人材紹介を使った<b>採用費</b>（年収の40%）</div></div>
+      <div class="stat"><div class="amt">1年4か月</div><div class="cap">採用費を<b>取り戻すまで</b>の期間</div></div>
+    </div>
+    <p class="s-lead">会社によって違いはありますが、入社したばかりの人が1年目から平均どおりに稼げることは、まずありません。1年以内に辞めれば、採用は丸ごと赤字になります。</p>
+
+    <h3 class="s-sub"><span class="cn mark"></span>採用の前に、この順番で直す</h3>
+    <p class="s-lead">目安は、<span class="strong">1人が稼ぐ粗利が、その人の人件費の2倍に届いているか</span>です。届いていなければ、人を増やすほど苦しくなります。そのときは採用より先に、次の順番で手を打ちます。</p>
+    <div class="actions">
+      <div class="action"><div class="n">1</div><div class="t">値段を見直す</div><div class="d">いちばん効くのに、いちばん後回しにされます。講師が投資した新卒紹介の会社は、紹介料を1人80万円から160万円に上げました。お客さんの数は少し減ったものの、本気のお客さんが増えて上場しました。</div></div>
+      <div class="action"><div class="n">2</div><div class="t">仕事と客を選ぶ</div><div class="d">粗利の高い仕事に人を寄せ、薄い仕事は減らすか思い切って断ります。何をやめるかを決めることが、戦略です。</div></div>
+      <div class="action"><div class="n">3</div><div class="t">1人あたりの産出を上げる</div><div class="d">手間のかかる安い仕事に人が張り付いているなら、できる限りAIに巻き取らせます。</div></div>
+      <div class="action"><div class="n">4</div><div class="t">儲かる仕事をする人を採る</div><div class="d">採用は、儲かる構造を大きくする装置です。順番が逆の会社ほど、採用で苦しんでいます。</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ SECTION 02 ════════════ -->
+<section class="s" id="s2">
+  <div class="s-inner">
+    <div class="s-num">SECTION 02</div>
+    <h2 class="s-h">AIで変わったのは、会社の「見つけられ方」</h2>
+    <p class="s-lead">帝国データバンクの集計では、2026年上半期の人手不足倒産は227件と、上半期として過去最多になりました。そのなかで講師が強調したのは、AIは「人を減らす道具」ではなく、<span class="strong">候補者が会社を見つける方法そのものを変えた</span>という点です。</p>
+
+    <h3 class="s-sub"><span class="cn mark"></span>候補者は、応募する前にAIに会社を聞く</h3>
+    <p class="s-lead">いまは新卒も中途も、就職や転職を考えるときにAIに聞いています。求人票や会社概要をAIに読ませ、受けるかどうかまで決めています。各社が求人票やスカウト文をAIで整えるようになり、文章の上手さではもう差がつきません。残る差は、<span class="em">実際に何をやっている会社か</span>と、それが外から見えるかどうかです。</p>
+    <div class="verdict">
+      <span class="k">今日できること</span>
+      <p>自社名に「就職」「転職」「採用」を添えて、ChatGPTやClaudeに聞いてみてください。答えが実際とずれていたら、どうすれば直るかをAIに聞き続ければ、アイデアはいくらでも出てきます。お金はかかりません。</p>
+    </div>
+    <p class="s-lead">講師が調べた範囲では、AIはYouTube・note・PR TIMESをよく見ているようです。また、法人アカウントの宣伝よりも、社長や社員一人ひとりが現場の話を発信するほうが届きます。講師自身のLinkedInでも、同じ時期・同じ長さの投稿で、現場の話は37,029表示、自社サービスの宣伝は5,745表示と、6.4倍の差がつきました。</p>
+
+    <h3 class="s-sub"><span class="cn mark"></span>社内のAI化 ― 社長が進め、未経験の人を早く戦力に</h3>
+    <p class="s-lead">どんなに優秀な社員でも、自分の仕事がなくなる方向には本気になりにくいものです。社長自身がAIを使いこなし、細かい業務の流れを押さえないと、AI化は進みません。その点、毎日考えて指示を出し続けている社長は、AIと相性がとても良い存在です。</p>
+    <p class="s-lead">AIは、経験の浅い人ほど伸ばします。顧客サポート担当5,179人の研究では、生成AIで1時間あたりの解決件数が平均15%増え、伸びたのは経験の浅い人でした。経験者を高い給与で奪い合うより、未経験の人を採ってAIと一緒に育てる道があります。</p>
+    <p class="s-lead">いまは中小企業のほうがAIで有利です。大企業はセキュリティの制約で、会社のデータを入れたり、AIエージェントを使ったりしにくいからです。</p>
+  </div>
+</section>
+
+<!-- ════════════ SECTION 03 ════════════ -->
+<section class="s" id="s3">
+  <div class="s-inner">
+    <div class="s-num">SECTION 03</div>
+    <h2 class="s-h">採用に勝てる会社は、社長が先頭に立っている</h2>
+    <p class="s-lead">採用が強い会社と弱い会社の違いは、人事の能力差ではありません。<span class="strong">社長が採用にどれだけ本気か</span>です。講師のnoteによると、社長が最終面接に出ている会社の内定承諾率は72%、出ていない会社は48%でした。いまは最終面接だけでなく、最初の面談から社長が出る会社が増えています。</p>
+
+    <h3 class="s-sub"><span class="cn mark"></span>社長が最初から会い、こちらから会いに行く</h3>
+    <p class="s-lead">社員は無意識のうちに、自分より優秀な人を「社風に合わない」「価値観が違う」と落としてしまいます。社長が最初から会うべき理由は、ここにあります。</p>
+    <p class="s-lead">また、本当に優秀な人ほど転職活動をしていません。営業と同じように、こちらから接点を作り、断られても間をおいて何度でも連絡します。断られた候補者を記録しておき、3か月から半年に1回、お茶や食事に誘い続けている経営者もいます。採用がうまくいっている経営者は、時間の3割を採用に使っています。</p>
+    <p class="s-lead">媒体やエージェントで採りにくくなったいま、頼りになるのは社員のつながりです。活躍している人の友達は、やはり活躍していることが多いものです。社内で活躍している人との距離を縮め、その知り合いにこちらから会いに行きます。</p>
+
+    <h3 class="s-sub"><span class="cn mark"></span>選考の直し方 ― 求人票・速さ・数え方・面接</h3>
+    <div class="lvl-cards prose">
+      <div class="lc"><div class="lc-head"><span class="lc-title">求人票</span></div>
+        <div class="lc-row"><span class="lc-lb">よくある形</span><span class="lc-val">会社の説明で終わっている</span></div>
+        <div class="lc-row"><span class="lc-lb">直し方</span><span class="lc-val">社長自身が、「この人が入って最初の3か月で何をやるか」に書き直す。社員にも見てもらう</span></div></div>
+      <div class="lc"><div class="lc-head"><span class="lc-title">決めるまでの速さ</span></div>
+        <div class="lc-row"><span class="lc-lb">よくある形</span><span class="lc-val">書類に3日、面接に2週間。その間に、いい人は他社で決まる</span></div>
+        <div class="lc-row"><span class="lc-lb">直し方</span><span class="lc-val">選考全体が2週間ほどで終わるようにする</span></div></div>
+      <div class="lc"><div class="lc-head"><span class="lc-title">数え方</span></div>
+        <div class="lc-row"><span class="lc-lb">よくある形</span><span class="lc-val">応募数を増やす話しかしていない</span></div>
+        <div class="lc-row"><span class="lc-lb">直し方</span><span class="lc-val">接触・返信・面談・内定・入社の5つの数を数え、どこで落ちているかを見る。返信が少なければ文面、内定から入社が少なければ社長の関わり方を見直す</span></div></div>
+      <div class="lc"><div class="lc-head"><span class="lc-title">面接</span></div>
+        <div class="lc-row"><span class="lc-lb">よくある形</span><span class="lc-val">社長・役員・現場で聞くことがばらばら</span></div>
+        <div class="lc-row"><span class="lc-lb">直し方</span><span class="lc-val">質問をそろえる（構造化面接）。本人に元上司を2人ほど紹介してもらい、話を聞く</span></div></div>
+    </div>
+    <p class="s-lead">求人票に書くべきなのは、大企業がお金をかけても手に入らない良さです。給与や知名度で競う必要はありません。<span class="strong">決裁までの距離が近い・任される範囲が広い・決めるのが速い・社長と直接話せる</span>。地方の会社なら、その土地で暮らし、働く良さが伝わると、UターンやIターンの採用が決まりやすくなります。</p>
+    <p class="s-lead">面接は、やり方で予測力が変わります。入社後の活躍をどれだけ予測できるかを比べた研究では、同じ質問を同じ順で聞く構造化面接がいちばん高い結果でした。</p>
+    <div class="chart-card">
+      <div class="cap"><b>入社後の活躍をどれだけ予測できるか（相関の推定値）</b></div>
+      <div class="bars">
+        <div class="bar-row"><div class="lb">構造化面接<span class="v">0.42</span></div><div class="bar-track"><div class="bar-fill b" style="width:84%"></div></div></div>
+        <div class="bar-row"><div class="lb">経歴の体系的な評価<span class="v">0.38</span></div><div class="bar-track"><div class="bar-fill a" style="width:76%"></div></div></div>
+        <div class="bar-row"><div class="lb">一般的な認知能力の検査<span class="v">0.31</span></div><div class="bar-track"><div class="bar-fill a" style="width:62%"></div></div></div>
+        <div class="bar-row"><div class="lb">性格検査（誠実性）<span class="v">0.19</span></div><div class="bar-track"><div class="bar-fill a" style="width:38%"></div></div></div>
+      </div>
+      <div class="src">出典：Sackett, Zhang, Berry &amp; Lievens (2022) Journal of Applied Psychology, 107(11)</div>
+    </div>
+    <p class="s-lead">そのうえで、選ぶ面接から口説く面談へ。面談で聞いた話をAIで資料にまとめ、一人ひとりのキャリアに向けたオファーを渡すだけでも、「いい社長だ」「いい会社だ」と感じる人は多いそうです。やっている会社が増えているので、やらないと差がつきます。</p>
+  </div>
+</section>
+
+<!-- ════════════ SECTION 04 ════════════ -->
+<section class="s" id="s4">
+  <div class="s-inner">
+    <div class="s-num">SECTION 04</div>
+    <h2 class="s-h">AI時代の評価・給与 ― 量ではなく、役割と結果で</h2>
+    <p class="s-lead">これまでは、かけた時間とこなした量で評価しがちでした。しかしAIを使う人と使わない人では、同じ時間の産出が大きく変わります。量で並べると、評価が壊れます。</p>
+    <div class="rules">
+      <div class="rule"><div class="l">POINT 01</div><div class="t">人ではなく、ポジションに値段をつける</div><div class="d">「あの人だからこの金額」をやめ、この役割にいくら払うかを先に決めます。</div></div>
+      <div class="rule"><div class="l">POINT 02</div><div class="t">上がり方を、先に見せる</div><div class="d">等級と金額のレンジを開示します。道筋が見えたほうが、入社もするし定着もします。</div></div>
+      <div class="rule"><div class="l">POINT 03</div><div class="t">「結果」と「再現性」で評価する</div><div class="d">結果はできるだけ数字にし、来期も同じ成果を出せるかを見ます。コンサルタント758人の実験では、AIが苦手な課題で、AIを使った人の正答率が19ポイント低くなりました。出た数字だけでは判断できません。</div></div>
+    </div>
+    <p class="s-lead">役割に値段をつけるときは、採用の相場ともつなげて考えます。人材紹介の手数料は年収の40%前後が相場で、幹部クラスでは50%以上になることもあります（会社・職種によって幅があります）。</p>
+
+    <h3 class="s-sub"><span class="cn mark"></span>開示するのは、等級とレンジまで</h3>
+    <p class="s-lead">講師が「興味深かった」と紹介した研究があります。従業員2,060人に実際の給与情報を知らせた実験では、比べる相手によって結果が逆になりました。</p>
+    <div class="duo">
+      <div class="b"><span class="num">1</span><div class="t">上司の給与が思ったより高いと分かった</div><div class="d">労働時間も売上も増えました。「自分も上がれる」という見通しが立ったためです。</div></div>
+      <div class="b"><span class="num">2</span><div class="t">同僚の給与が自分より高いと分かった</div><div class="d">労働時間・メールの数・売上のすべてが落ちました。</div></div>
+    </div>
+    <p class="s-lead">だから見せるのは、等級と「上に行くといくらか」のレンジまで。同僚一人ひとりの金額は見せません。</p>
+
+    <h3 class="s-sub"><span class="cn mark"></span>中小企業版は、シンプルでいい</h3>
+    <p class="s-lead">制度は、等級3〜5段階くらいで十分です。複雑にすると、社長は運用できても部下が運用できません。レンジには幅を持たせ、上限に来たら次の役割の要件を見せます。賞与も簡単な仕組みにします。尊敬する他社の制度をそのまま入れても、風土もビジネスモデルも違うので、うまくいきません。</p>
+  </div>
+</section>
+
+<!-- ════════════ SECTION 05 ════════════ -->
+<section class="s" id="s5">
+  <div class="s-inner">
+    <div class="s-num">SECTION 05</div>
+    <h2 class="s-h">入社後90日の設計と、「誰と一緒にやるか」</h2>
+    <p class="s-lead">採って終わりにすると、3か月以内に辞める人が少なくありません。採用も迎え入れも人事任せにせず、経営の仕事として準備します。</p>
+    <div class="verdict">
+      <span class="k">入社初日の1時間で、半年後の離職が変わる</span>
+      <p>インドの大手IT企業で新入社員を3つの群に分けた実験では、「あなたらしさが最も出るのはどんなときか」を書いて話してもらった群で、最初の6か月で辞める人が<span class="big">32%</span>少なくなりました。かけた時間は、初日の1時間だけです。</p>
+    </div>
+
+    <h3 class="s-sub"><span class="cn mark"></span>受け入れ表は、紙1枚でいい</h3>
+    <table class="tbl tbl-stack">
+      <thead><tr><th style="width:24%">時期</th><th>やること</th></tr></thead>
+      <tbody>
+        <tr><th>1〜30日</th><td><ul class="tl"><li>誰に聞けばいいかを全部渡す</li><li>社長が1回、1対1で話す</li></ul></td></tr>
+        <tr><th>31〜60日</th><td><ul class="tl"><li>フォローする担当を正式に決める</li><li>できていることを言葉にして伝え、困っていることを本人から出してもらう</li></ul></td></tr>
+        <tr><th>61〜90日</th><td><ul class="tl"><li>一人前の定義と、いまの位置を照らし合わせる</li><li>半年後の役割を伝える</li><li>自己評価が高すぎる人には、社長がフィードバックする</li></ul></td></tr>
+      </tbody>
+    </table>
+    <p class="s-lead">講師が「ここ大事」と前置きしたのが、入社1年未満の社員と「次にどんな人を採るか」を話すことです。社長には見えにくい、いまの社内の感覚が分かります。</p>
+
+    <h3 class="s-sub"><span class="cn mark"></span>上場した会社と、しなかった会社の分かれ目</h3>
+    <div class="rules">
+      <div class="rule"><div class="l">POINT 01</div><div class="t">数字を開示する</div><div class="d">業績が良くないと出しにくいものですが、それでも開示したほうがよい。立て直したい、抜けた幹部の穴を埋めたいという優秀な人は、実際にいます。</div></div>
+      <div class="rule"><div class="l">POINT 02</div><div class="t">最初の幹部で妥協しない</div><div class="d">最初に採った幹部が、その後の採用の基準になります。</div></div>
+      <div class="rule"><div class="l">POINT 03</div><div class="t">制度より先に、誰と一緒にやるかを決める</div><div class="d">制度だけを先に作ると、優秀だと思っていた人が急に辞めることがあります。社長が一緒にやりたい人が、ますます働きたくなる制度にします。</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ SECTION 06 ════════════ -->
+<section class="s" id="s6">
+  <div class="s-inner">
+    <div class="s-num">SECTION 06</div>
+    <h2 class="s-h">経営者が始めること ― 今週・今月・3か月</h2>
+    <p class="s-lead">採用と人事は「重要だが緊急ではない」仕事です。資金繰りや目先の商談に押されて、必ず後回しになります。だから先にカレンダーに入れます。</p>
+    <h3 class="s-sub"><span class="cn mark"></span>今週やること（それぞれ1時間で終わる）</h3>
+    <div class="actions">
+      <div class="action"><div class="n">1</div><div class="t">1人あたりの粗利を出す</div><div class="d">年間の粗利を社員数で割り、人件費の2倍に届いているかを見ます。届いていなければ、単価・売上・原価のどれを直すかを考えます。</div></div>
+      <div class="action"><div class="n">2</div><div class="t">求人票を社長が書き直す</div><div class="d">会社の説明ではなく、入った人が何をやるかを書きます。社員にも、魅力的に見えるかを見てもらいます。</div></div>
+      <div class="action"><div class="n">3</div><div class="t">社長が面接に出る</div><div class="d">最終面接、できれば最初の面談から。出られない週があっても、出ると決めることが大事です。</div></div>
+      <div class="action"><div class="n">4</div><div class="t">AIに自社名を聞く</div><div class="d">「就職」「転職」「採用」を添えて聞き、ずれていたら直し方をAIに聞き続けます。</div></div>
+    </div>
+    <h3 class="s-sub"><span class="cn mark"></span>今月と、3か月で変えること</h3>
+    <table class="tbl tbl-stack">
+      <thead><tr><th style="width:24%">いつ</th><th>やること</th></tr></thead>
+      <tbody>
+        <tr><th>今月</th><td><ul class="tl"><li>直近1年の採用を、接触・返信・面談・内定・入社の5つの数で数える</li><li>等級とレンジを紙1枚にする</li><li>入社90日の受け入れ表を作る</li></ul></td></tr>
+        <tr><th>3か月</th><td><ul class="tl"><li>社長の時間の3割を採用にあてる（週5日のうち1.5日）</li><li>社員1人が週1回、現場のことを書く（宣伝は書かない）</li><li>幹部の「優秀」の中身を言葉にする</li></ul></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ════════════ まとめ／CTA ════════════ -->
+<section class="closing">
+  <div class="closing-inner">
+    <div class="eyebrow">最後に — Closing</div>
+    <h2>制度は真似できる。給与も真似できる。<br>でも、<span class="hl">あなたと働きたいと思う人の数</span>だけは、誰にも真似できない。</h2>
+    <p>サービスはすぐに真似され、その会社でなければできない仕事も、実は多くありません。AI時代にも残り続けるのは、「あなたと一緒に働きたい」と思ってもらえることです。それが、中小企業のいちばん大きな資本です。</p>
+  </div>
+</section>
+
+<!-- フローティング：目次へ戻る -->
+<a href="#toc" class="back-to-toc" aria-label="目次へ戻る">
+  <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+  <span>目次へ戻る</span>
+</a>
+<script>
+(function(){
+  var btn = document.querySelector('.back-to-toc');
+  if(!btn) return;
+  var threshold = 600;
+  function update(){
+    if(window.pageYOffset > threshold){ btn.classList.add('show'); }
+    else{ btn.classList.remove('show'); }
+  }
+  window.addEventListener('scroll', update, { passive:true });
+  update();
+})();
+</script>
+
+<!-- 免責（フッター近く・2回目） -->
+<div class="disclaimer">
+  <p>※ 本資料はセミナー講演をAIで再構成したものです。記載の数値・見解は講演時点のものであり、特定の取り組みの結果を保証するものではありません。</p>
+</div>
+
+<!-- コピーライト -->
+<footer class="page-foot">
+  <p>© <a href="https://www.zenkoku-keiyukai.or.jp/" target="_blank" rel="noopener">全国中小企業経友会事業協同組合</a></p>
+</footer>
+
+</body>
+</html>
