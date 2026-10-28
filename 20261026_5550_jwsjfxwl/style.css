@@ -337,15 +337,21 @@
   .tier.t-non .tbadge{ background:#64748b; }
   @media (max-width:560px){ .tiers{ padding:16px; } }
 
-  /* スクショ */
-  .shots{ margin-top:22px; display:grid; grid-template-columns:1fr 1fr; gap:18px; }
-  .shots.solo{ grid-template-columns:1fr; max-width:560px; margin-left:auto; margin-right:auto; }
+  /* スクショ・スライド（編集後の動画から抜いた画像）。字が読めるよう、本文の幅いっぱいに1枚ずつ縦に並べる
+     （2026-10-28 仲田さん「小さすぎて文字が読めない」。前は1枚で幅560px・2枚並びで約370px）。
+     画像は <a href="img/…" target="_blank" rel="noopener"> で囲み、押すと元の大きさで開く（スマホは開いて指で拡大） */
+  .shots{ margin-top:22px; display:grid; grid-template-columns:1fr; gap:18px; }
+  .shots.solo{ grid-template-columns:1fr; }
   .shot{
     background:#fff; border:1px solid var(--line-soft); border-radius:var(--radius);
     padding:14px; box-shadow:var(--shadow);
   }
   .shot img{
     width:100%; display:block; border:1px solid var(--line-soft); border-radius:4px;
+  }
+  .shot a{ display:block; cursor:zoom-in; }
+  @media (hover:none){
+    .shot a::after{ content:"画像を押すと大きく見られます"; display:block; margin-top:6px; font-size:11.5px; color:var(--mute); }
   }
   .shot-cap{ font-size:13px; color:var(--sub); margin-top:10px; line-height:1.7; }
   .shot-cap b{ color:var(--navy); font-weight:700; }
@@ -472,7 +478,7 @@
   @media (max-width: 720px){
     .split{ grid-template-columns:1fr; }
     .split.fig-left{ grid-template-columns:1fr; }
-    .shots{ grid-template-columns:1fr; max-width:560px; margin-left:auto; margin-right:auto; }
+    .shot{ padding:8px; }
     .steps{ grid-template-columns:repeat(2,1fr); }
     .rules{ grid-template-columns:1fr; }
     .actions{ grid-template-columns:1fr; }
