@@ -337,10 +337,12 @@
   .tier.t-non .tbadge{ background:#64748b; }
   @media (max-width:560px){ .tiers{ padding:16px; } }
 
-  /* スクショ・スライド（編集後の動画から抜いた画像）。字が読めるよう、本文の幅いっぱいに1枚ずつ縦に並べる
+  /* スクショ・スライド（編集後の動画から抜いた画像）。字が読めるよう、1枚ずつ縦に並べ、パソコンでは本文（800px）より広く
+     1080pxで左右にはみ出して出す（画面が1140px以上のとき）。それより狭い画面では本文の幅いっぱい
      （2026-10-28 仲田さん「小さすぎて文字が読めない」。前は1枚で幅560px・2枚並びで約370px）。
      画像は <a href="img/…" target="_blank" rel="noopener"> で囲み、押すと元の大きさで開く（スマホは開いて指で拡大） */
   .shots{ margin-top:22px; display:grid; grid-template-columns:1fr; gap:18px; }
+  @media (min-width:1140px){ .shots{ width:1080px; margin-left:calc(50% - 540px); } }
   .shots.solo{ grid-template-columns:1fr; }
   .shot{
     background:#fff; border:1px solid var(--line-soft); border-radius:var(--radius);
