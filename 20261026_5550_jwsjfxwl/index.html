@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <!--
  セミナー要点解説 web版（要点解説スキル）5550 渡邊 浩滋 氏。前後編（5550-1・5550-2）は1つの講演を休憩で分けたもので、1ページにまとめた（仲田さん 2026-10-27）
+ 2026-10-29 作り直し：講師のスライドの画像はやめ、手残りの推移・評価のイメージ・5年ルール・フローチャート・リリーフクロスを HTML／SVG で組み直した
 -->
 <html lang="ja">
 <head>
@@ -10,12 +11,12 @@
 <meta name="googlebot" content="noindex,nofollow,noarchive,nosnippet">
 <meta name="referrer" content="no-referrer">
 <title>事業承継から「逆算する」相続対策の進め方｜渡邊浩滋氏 セミナー要点</title>
-<meta name="description" content="大家さん専門税理士・渡邊浩滋氏のセミナーの要点。令和8年度改正の「5年ルール」、相続税が年々上がる理由、「継ぎたい」資産に変える3つの方法などを、6章で解説します。">
+<meta name="description" content="大家さん専門税理士・渡邊浩滋氏のセミナーの要点。令和8年度改正の「5年ルール」、手残りと相続税の推移の出し方、売却・修繕・建替えの判断、「継ぎたい」資産に変える3つの方法を解説します。">
 <!-- リンクのプレビュー（make_og.py が作る） -->
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="全国経友会　セミナー要点解説">
 <meta property="og:title" content="事業承継から「逆算する」相続対策の進め方｜渡邊浩滋氏 セミナー要点解説">
-<meta property="og:description" content="大家さん専門税理士・渡邊浩滋氏のセミナーの要点。令和8年度改正の「5年ルール」、相続税が年々上がる理由、「継ぎたい」資産に変える3つの方法などを、6章で解説します。">
+<meta property="og:description" content="大家さん専門税理士・渡邊浩滋氏のセミナーの要点。令和8年度改正の「5年ルール」、手残りと相続税の推移の出し方、売却・修繕・建替えの判断、「継ぎたい」資産に変える3つの方法を解説します。">
 <meta property="og:url" content="https://nakadaayane.github.io/yoten-kaisetsu/20261026_5550_jwsjfxwl/">
 <meta property="og:image" content="https://nakadaayane.github.io/yoten-kaisetsu/20261026_5550_jwsjfxwl/img/og.jpg">
 <meta property="og:image:width" content="1200">
@@ -24,7 +25,7 @@
 <!-- /リンクのプレビュー -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800;900&family=Inter:wght@700;800&display=swap" rel="stylesheet">
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -40,48 +41,423 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-<!-- ① 紺色帯ヘッダ -->
 <header class="topbar">
   <div class="topbar-inner">全国経友会　セミナー要点解説</div>
 </header>
 
-<!-- ② 白背景ヒーロー -->
 <section class="hero-light">
   <div class="hero-inner">
     <p class="sub">大家さん専門税理士が語る！</p>
     <h1>事業承継から「逆算する」<br>相続対策の進め方</h1>
-    <p class="hero-meta">2026年10月26日 収録<span class="sep">／</span>セミナー番号 5550</p>
-    <p class="hero-catch"><span class="catch-hook">いま不動産オーナーに一番響くのは、節税よりも「事業承継」だと講師は見ています。</span>令和8年度の税制改正で、亡くなる前5年以内に取得した貸付用不動産は時価で評価されることになり、駆け込みの相続対策は効きにくくなりました。一方で、お子さんから「不動産は継ぎたくない、現金でほしい」と言われる大家さんが増えています。<mark>1億円の建物で評価を7,200万円圧縮しても、毎年480万円ずつ財産が増えるため、単純計算で15年ほどでその効果はなくなります。</mark></p>
+    <p class="hero-meta"><span class="nw">2026年</span>10月<span class="nw">26日</span> 収録<span class="sep">／</span>セミナー番号 5550</p>
+    <p class="hero-catch"><span class="catch-hook">「不動産は継ぎたくない、現金でほしい」。お子さんからそう言われる大家さんが増えています。</span>令和<span class="nw">8年</span>度の改正で駆け込みの相続対策が効きにくくなるなか、大家さん専門税理士の渡邊浩滋氏は、いま一番響くのは節税より事業承継だと見ています。顧問先の大家さんに何を数字で示し、どう承継に備えてもらうかを解説します。<mark>相続対策の出発点は、評価をどれだけ下げるかではなく、その不動産をお子さんが継げるかどうかです。</mark></p>
 
     <div class="hero-points">
       <div class="hp-label">このセミナーの要点</div>
       <ol>
-        <li><span class="n">1</span>相続前5年以内の購入は「時価×80%」で評価されるので、駆け込みに頼らず、早めに賃貸経営として対策する</li>
-        <li><span class="n">2</span>相続税は年々上がる前提で、事業計画から5年後・10年後の相続税の推移を出して備える</li>
-        <li><span class="n">3</span>対策の出発点を事業承継の可能性に置き、「継ぎたい」資産に整えて、子どもを早めに経営に巻き込む</li>
+        <li><span class="n">1</span>相続前<span class="nw">5年</span>以内に取得した貸付用不動産は、令和<span class="nw">9年</span>以後の相続から時価で評価される。直前の駆け込みに頼らず、早めに賃貸経営として備える</li>
+        <li><span class="n">2</span>家賃も経費も同じでも、手残りは減り、相続税は増えていく。事業計画で、手残りがマイナスになる年と、<span class="nw">5年</span>後・<span class="nw">10年</span>後の相続税を先に出す</li>
+        <li><span class="n">3</span>対策の出発点は事業承継の可能性。「継ぎたい」資産に整え、継いでほしいと伝え、お子さんを早めに経営に巻き込む</li>
       </ol>
     </div>
   </div>
 </section>
 
-<!-- 目次 -->
 <nav class="toc-wrap" aria-label="目次" id="toc">
   <div class="toc">
-    <h2>目次</h2>
-    <ol>
-      <li><a href="#author">講師紹介</a></li>
-      <li><a href="#s1">賃貸経営は「右肩下がり」 ― 将来の手残りを事業計画で見る</a></li>
-      <li><a href="#s2">令和8年度改正の「5年ルール」と、個人か法人か</a></li>
-      <li><a href="#s3">相続税は年々上がる ― これからの相続対策の心がけ</a></li>
-      <li><a href="#s4">事業承継から逆算する ― 売却・修繕・建替えの判断</a></li>
-      <li><a href="#s5">認知症対策と、法人化の落とし穴</a></li>
-      <li><a href="#s6">「継ぎたくない」を「継ぎたい」に変える3つの方法</a></li>
-    </ol>
+    <details class="toc-d" open>
+      <summary>目次</summary>
+      <ol>
+        <li><a href="#s1">家賃も経費も同じなのに、手残りは減っていく</a></li>
+        <li><a href="#s2">令和<span class="nw">8年</span>度改正の「<span class="nw">5年</span>ルール」と、個人か法人か</a></li>
+        <li><a href="#s3">評価を下げても、相続税は年々上がる</a></li>
+        <li><a href="#s4">売却・修繕・建替えは、事業承継から逆算する</a></li>
+        <li><a href="#s5">認知症対策と、法人化の落とし穴</a></li>
+        <li><a href="#s6">「継ぎたくない」を「継ぎたい」に変える<span class="nw">3つ</span>の方法</a></li>
+        <li class="x"><a href="#todo">明日からやること</a></li>
+        <li class="x"><a href="#author">講師紹介</a></li>
+      </ol>
+    </details>
     <p class="toc-catch">※ 本資料はセミナー講演をAIで再構成したものです。記載の数値・見解は講演時点のものであり、特定の取り組みの結果を保証するものではありません。</p>
   </div>
 </nav>
 
-<!-- 講師紹介 -->
+<!-- ════════════ 第1章 ════════════ -->
+<section class="s" id="s1">
+  <div class="s-inner">
+    <div class="s-num">第<span class="nw">1章</span></div>
+    <h2 class="s-h">家賃も経費も同じなのに、<br class="sp">手残りは減っていく</h2>
+    <p class="s-lead">実家のアパートを立て直した渡邊氏は、賃貸経営で大事なのは<span class="strong">将来のお金の管理</span>だと言います。空室や修繕費が増えなくても、手残りは下がっていくからです。次の図は、渡邊氏が作る事業計画表<span class="nw">の試算です。</span></p>
+
+    <figure class="gfig">
+      <div class="gfig-t">何も変えなくても、手残りは<span class="nw">18年</span>目にマイナスへ<span class="gfig-s">手残りの推移（単位：万円）。家賃収入3,000・諸経費600・借入返済1,380・生活費500を、毎年同じにした試算</span></div>
+      <div class="cf-plot" role="img" aria-label="手残りは1年目383万円から下がり続け、15年目78万円、18年目にマイナス14万円、33年目にマイナス235万円">
+        <svg viewBox="0 0 320 740" preserveAspectRatio="none" aria-hidden="true">
+          <line class="gd" x1="0" y1="20" x2="320" y2="20"/>
+          <line class="gd" x1="0" y1="220" x2="320" y2="220"/>
+          <line class="gd" x1="0" y1="620" x2="320" y2="620"/>
+          <polygon points="0,37 10,56 20,96 50,201 80,277 110,316 140,342 165.4,420 0,420" fill="#1d4ed8" fill-opacity=".10"/>
+          <polygon points="165.4,420 170,434 200,468 230,507 260,550 290,600 320,655 320,420" fill="#c2410c" fill-opacity=".14"/>
+          <line class="ax" x1="0" y1="420" x2="320" y2="420"/>
+          <polyline class="ln" stroke="#1d4ed8" points="0,37 10,56 20,96 50,201 80,277 110,316 140,342 165.4,420"/>
+          <polyline class="ln" stroke="#c2410c" points="165.4,420 170,434 200,468 230,507 260,550 290,600 320,655"/>
+        </svg>
+        <span class="cf-y" style="top:2.7%">400</span>
+        <span class="cf-y" style="top:29.73%">200</span>
+        <span class="cf-y" style="top:56.76%">0</span>
+        <span class="cf-y" style="top:83.78%">−200</span>
+        <span class="cf-dot" style="left:0%;top:5%"></span>
+        <span class="cf-dot" style="left:3.12%;top:7.57%"></span>
+        <span class="cf-dot" style="left:6.25%;top:12.97%"></span>
+        <span class="cf-dot" style="left:15.62%;top:27.16%"></span>
+        <span class="cf-dot" style="left:25%;top:37.43%"></span>
+        <span class="cf-dot" style="left:34.38%;top:42.7%"></span>
+        <span class="cf-dot" style="left:43.75%;top:46.22%"></span>
+        <span class="cf-dot ng big" style="left:53.12%;top:58.65%"></span>
+        <span class="cf-dot ng" style="left:62.5%;top:63.24%"></span>
+        <span class="cf-dot ng" style="left:71.88%;top:68.51%"></span>
+        <span class="cf-dot ng" style="left:81.25%;top:74.32%"></span>
+        <span class="cf-dot ng" style="left:90.62%;top:81.08%"></span>
+        <span class="cf-dot ng" style="left:100%;top:88.51%"></span>
+        <span class="cf-lab" style="left:0%;top:5%;transform:translate(14px,-125%)">383</span>
+        <span class="cf-lab" style="left:43.75%;top:46.22%;transform:translate(8px,-120%)">78</span>
+        <span class="cf-lab ng" style="left:53.12%;top:58.65%;transform:translate(calc(-100% - 14px),10px);text-align:right"><span class="k"><span class="nw">18年</span>目でマイナスに</span>−14</span>
+        <span class="cf-lab ng" style="left:100%;top:88.51%;transform:translate(calc(-100% + 4px),10px)">−235</span>
+      </div>
+      <div class="cf-x"><span style="left:0%">1<small>年目</small></span> <span style="left:25%">9</span> <span style="left:43.75%">15</span> <span style="left:53.12%">18</span> <span style="left:100%">33<small>年目</small></span></div>
+      <figcaption>点は事業計画表の年（<span class="nw">3年</span>目のあとは<span class="nw">3年</span>ごと）。空室も修繕費の増加も入れ<span class="nw">ていません。</span></figcaption>
+    </figure>
+
+    <p class="s-lead">理由は<span class="nw">2つ</span>あります。<span class="nw">1つ</span>は利息です。多くの大家さんは元本と利息の合計が一定の元利均等返済なので、返済額は変わらず利息だけが減り、経費が減って税金が増えます。もう<span class="nw">1つ</span>は減価償却。設備などを短い期間で償却していると、ある年から経費が急になくなり、税金が跳ね上がります。下の表では、<span class="nw">15年</span>目のあと<span class="nw">18年</span>目までに定率法の償却が終わり、手残りがマイナスに転<span class="nw">じています。</span></p>
+    <table class="ntbl">
+      <thead><tr><th>万円</th> <th><span class="nw">1年</span>目</th> <th><span class="nw">15年</span>目</th> <th class="hi"><span class="nw">18年</span>目</th> <th><span class="nw">30年</span>目</th></tr></thead>
+      <tbody>
+        <tr><th>支払利息</th> <td>820</td> <td>640</td> <td class="hi">570</td> <td>210</td></tr>
+        <tr><th>減価償却（定額法）</th> <td>231</td> <td>231</td> <td class="hi">231</td> <td>231</td></tr>
+        <tr><th>減価償却（定率法）</th> <td>751</td> <td>145</td> <td class="hi no">なし</td> <td class="no">なし</td></tr>
+        <tr><th>所得税・住民税</th> <td>137</td> <td>442</td> <td class="hi">534</td> <td>700</td></tr>
+        <tr class="sum"><th>手残り</th> <td>383</td> <td>78</td> <td class="hi ng">−14</td> <td class="ng">−180</td></tr>
+      </tbody>
+    </table>
+
+    <div class="verdict">
+      <span class="k">将来の手残りは、<br class="sp">事業計画で先に見る</span>
+      <p>確定申告は過去の数字で、しかも利益の計算です。元本の返済は利益に乗らないので、申告は黒字でも手元は赤字、ということがよく起こります。利息と減価償却の状況が分かる税理士なら、事業計画で手残りがいつマイナスになるかを先に察知し、手<span class="nw">を打てます。</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ 第2章 ════════════ -->
+<section class="s" id="s2">
+  <div class="s-inner">
+    <div class="s-num">第<span class="nw">2章</span></div>
+    <h2 class="s-h">令和8年度改正の「5年ルール」と、<br class="sp">個人か法人か</h2>
+    <p class="s-lead">現金を不動産に換えると、時価は同じでも、相続税の評価は大きく<span class="nw">下がります。</span></p>
+
+    <figure class="gfig">
+      <div class="gfig-t">現金150を不動産に換えて貸すと、相続税の評価は84に<span class="gfig-s">渡邊氏が示した評価のイメージ（比率の例）</span></div>
+      <div class="stk" role="img" aria-label="現金150、買ったときの時価150（建物50・土地100）、相続税の評価額110（建物30・土地80）、賃貸した場合の評価額84（貸家21・貸地63）">
+        <div class="stk-col c0"><div class="stk-bar" style="height:100%"><span style="flex:150">現金<b>150</b></span></div></div>
+        <div class="stk-col c1"><div class="stk-bar" style="height:100%"><span style="flex:50">建物<b>50</b></span><span style="flex:100">土地<b>100</b></span></div></div>
+        <div class="stk-col c2"><div class="stk-bar" style="height:73.33%"><span style="flex:30">建物<b>30</b></span><span style="flex:80">土地<b>80</b></span></div></div>
+        <div class="stk-col c3"><div class="stk-bar" style="height:56%"><span style="flex:21">貸家<b>21</b></span><span style="flex:63">貸地<b>63</b></span></div></div>
+      </div>
+      <div class="stk-lb">
+        <div>現金<b>150</b></div>
+        <div>買ったときの時価<b>計150</b></div>
+        <div>相続税の評価額<b>計110</b></div>
+        <div class="last">賃貸した場合の評価額<b>計84</b></div>
+      </div>
+      <figcaption>建物は固定資産税評価額（建築費の4〜6割。ここでは6割）、土地は路線価（時価の8割ほど）で評価。賃貸すると建物は3割引き、土地も借地権割合（ここでは<span class="nw">70%</span>）に応じて<span class="nw">下がります。</span></figcaption>
+    </figure>
+
+    <p class="s-lead">この差を使った節税が問題になり、令和<span class="nw">4年</span>の最高裁判決は、路線価ではなく時価（鑑定評価）での評価を認めました。根拠は財産評価基本通達の「<span class="nw">総則6項</span>」（通達どおりの評価が著しく不適当なら、国税庁長官の指示で評価する規定）。金融機関の稟議書にあった「相続対策のため」の一文も、意図を疑われる一因に<span class="nw">なりました。</span></p>
+
+    <h3 class="s-sub"><span class="cn mark"></span>相続前5年以内に取得した貸付用不動産は、時価で評価</h3>
+    <p class="s-lead">何年前までなら駆け込みか。その線を引いたのが令和<span class="nw">8年</span>度の税制改正で、亡くなる前<span class="nw">5年</span>以内に取得・新築した貸付用不動産は時価で評価します。簡便法では、取得価額に地価の変動率（相続時の路線価÷購入時の路線価）を掛けた額の<span class="nw">80%</span>で評価できます（建物は取得価額から減価償却費を引いた額がもと）。<span class="nw">5年</span>以内でも、評価は2割下が<span class="nw">るわけです。</span></p>
+
+    <figure class="gfig">
+      <div class="gfig-t">相続の何年前に買ったかで、評価の仕方が変わる<span class="gfig-s">令和<span class="nw">9年</span>1月<span class="nw">1日</span>以後の相続・贈与から</span></div>
+      <div class="tl5">
+        <div class="ax ax1"><span class="nw">5年</span>超前に購入</div>
+        <div class="ax ax2"><span class="nw">5年</span>以内に購入</div>
+        <div class="dash"><span><span class="nw">5年</span>前</span></div>
+        <div class="end">相続発生</div>
+        <div class="lb r1">貸付用不動産</div>
+        <div class="sg lo r1"><b>路線価など</b><small>評価額が低い</small></div>
+        <div class="sg hi r1"><b>時価×<span class="nw">80%</span></b><small>評価額が比較的高くなる</small></div>
+        <div class="lb r2">小口化不動産</div>
+        <div class="sg hi span r2"><b>時価</b><small>期間に関わらず、常に時価で評価</small></div>
+      </div>
+      <figcaption>「時価×<span class="nw">80%</span>」は簡便法。<span class="nw">5年</span>を過ぎれば、これまでどおり路線価などで<span class="nw">評価できます。</span></figcaption>
+    </figure>
+
+    <p class="s-lead">令和<span class="nw">8年</span>に買った物件でも、相続・贈与が令和<span class="nw">9年</span>以降なら対象です。経過措置として、通達が定められる日の<span class="nw">5年</span>前から持つ土地に、その日までに新築した家屋は対象外。収録時点では通達はまだ案で、令和<span class="nw">8年</span>9月<span class="nw">18日</span>の通達案では、次のものも対象外と<span class="nw">されました。</span></p>
+    <table class="tbl">
+      <thead><tr><th>通達案で、<span class="nw">5年</span>ルールの対象外とされたもの</th></tr></thead>
+      <tbody>
+        <tr><td>自宅（貸付用不動産ではないため。直前に買っても路線価などで評価できる。ただし<span class="nw">総則6項</span>は残る）</td></tr>
+        <tr><td>貸し駐車場（借地借家法の適用がないため）</td></tr>
+        <tr><td><span class="nw">5年</span>より前から持つ建物・相続で受け取った建物の増改築（<span class="nw">5年</span>以内に買った建物の増改築は対象）</td></tr>
+      </tbody>
+    </table>
+    <p class="s-lead">建替えは対象外に明記されておらず、今の案のままなら、通達の日までに新築していない建替えは、相続前<span class="nw">5年</span>以内なら建物が時価評価になりそう、というのが渡邊氏<span class="nw">の読みです。</span></p>
+
+    <h3 class="s-sub"><span class="cn mark"></span>80歳の父がこれから買うなら、個人か法人か</h3>
+    <p class="s-lead">改正を受けて、最近増えてい<span class="nw">る相談です。</span></p>
+    <div class="quiz">
+      <div class="quiz-q">
+        <span class="quiz-label">相談</span>
+        <p class="quiz-text">80歳を超えた父が、現金を多く持っています。これから賃貸不動産を買うなら、どちらがよいでしょうか。</p>
+        <p class="quiz-note">令和<span class="nw">9年</span>から、<span class="nw">5年</span>以内に買った不動産には路線価などが使えなくなる、とい<span class="nw">う前提です。</span></p>
+        <ol class="quiz-choices">
+          <li><span class="qn">1</span><span class="qt">父が個人で買う</span></li>
+          <li><span class="qn">2</span><span class="qt">父が法人にお金を貸して、法人で買う</span></li>
+        </ol>
+      </div>
+      <details class="quiz-a cond">
+        <summary><span class="quiz-label">渡邊氏の答え</span><span class="reveal">考えてから、押して開いてください</span></summary>
+        <ol class="quiz-choices">
+          <li class="win"><span class="qn">1</span><span class="qt">父が個人で買う</span><span class="qv tx">相続税を優先なら</span></li>
+          <li><span class="qn">2</span><span class="qt">法人で買う</span><span class="qv tx">承継・認知症対策を優先なら</span></li>
+        </ol>
+        <p class="quiz-why"><b>80歳を超えた父なら、個人で買う</b>のが渡邊氏の答えです。法人への貸付金は額面のまま評価され、下がりません。個人なら<span class="nw">5年</span>以内の相続でも8割、<span class="nw">5年</span>を過ぎれば路線価などで評価でき、多くは、家賃が貯まるより評価減の効果の方が大きいからです。ただし事業承継や認知症対策を優先するなら、<span class="nw">法人</span>で買う意味もあります。何を優先するか<span class="nw">で決めます。</span></p>
+      </details>
+    </div>
+    <p class="s-lead">「法人で買えば評価がガクッと下がる」と思い込むオーナーもいますが、法人の効果は、家賃が法人に入り、父の財産が貸付金の額で止まること。株主をお子さんにすれば、利益はお子さんの株の価値になります。効果は<span class="strong">「増やさない」ことで、「下げる」ことではありません</span>。お子さんを役員にして運営を任せられ、お子さんが代表者なら、父が認知症になっても運営を続けられるのも法人の利点です。相続まで長いなら法人、短いなら個人<span class="nw">が目安です。</span></p>
+  </div>
+</section>
+
+<!-- ════════════ 第3章 ════════════ -->
+<section class="s" id="s3">
+  <div class="s-inner">
+    <div class="s-num">第<span class="nw">3章</span></div>
+    <h2 class="s-h">評価を下げても、<br class="sp">相続税は年々上がる</h2>
+    <p class="s-lead">今回の改正で変わったのは駆け込みの部分だけで（小口化不動産は別）、<span class="nw">5年</span>を過ぎた評価はこれまで<span class="nw">どおりです。</span></p>
+    <h3 class="s-sub"><span class="cn mark"></span>これからの相続対策の心がけは2つ</h3>
+    <div class="duo">
+      <div class="b">
+        <span class="num">1</span>
+        <div class="t">相続の直前に対策をしない</div>
+        <div class="d">直前になると打てる手が限られ、一気に大きな不動産を買わないと評価を下げられなくなります。</div>
+      </div>
+      <div class="b">
+        <span class="num">2</span>
+        <div class="t">賃貸経営として取り組む</div>
+        <div class="d">相続対策が前面に出ると、<span class="nw">総則6項</span>で「意図して画策した」と見られかねません。法人の事業目的に不動産賃貸を入れ、賃貸経営が目的だと分かる形にします。</div>
+      </div>
+    </div>
+    <h3 class="s-sub"><span class="cn mark"></span>評価を下げた効果は、15年ほどで消える</h3>
+    <p class="s-lead">手残りは右肩下がりでも、相続税は右肩上がりです。買った直後に評価が下がっても、その後は元本が減り、手残りが貯まって、財産が毎年増え<span class="nw">ていきます。</span></p>
+
+    <figure class="gfig">
+      <div class="gfig-t">1億円の建物で圧縮した7,<span class="nw">200万円</span>は、<span class="nw">15年</span>で埋まる<span class="gfig-s">利回り<span class="nw">7%</span>・借入期間<span class="nw">30年</span>・利率<span class="nw">1.5%</span>での単純計算</span></div>
+      <div class="eqs">
+        <div class="eq"><span class="v">1億円<small>建築費</small></span> <span class="g"><span class="op">×</span><span class="v"><span class="nw">40%</span><small>固定資産税評価額</small></span></span> <span class="g"><span class="op">×</span><span class="v"><span class="nw">70%</span><small>賃貸で3割引き</small></span></span> <span class="g"><span class="op">＝</span><span class="v res">2,<span class="nw">800万円</span><small>相続税の評価</small></span></span></div>
+        <p class="eq-note">建築費1億円との差、<b>7,<span class="nw">200万円</span></b>が、評価を下げられた額です。</p>
+        <div class="eq"><span class="v">年<span class="nw">260万円</span><small>元本返済</small></span> <span class="g"><span class="op">＋</span><span class="v">年<span class="nw">220万円</span><small>手残り</small></span></span> <span class="g"><span class="op">＝</span><span class="v res">年<span class="nw">480万円</span><small>毎年増える財産</small></span></span></div>
+      </div>
+      <div class="fill-box"><span class="fill-cap">圧縮した7,<span class="nw">200万円</span></span><div class="fill15" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+      <div class="fill-x"><span style="left:33.33%"><span class="nw">5年</span></span> <span style="left:66.67%"><span class="nw">10年</span></span> <span style="left:100%"><span class="nw">15年</span></span></div>
+      <div class="fill-lb"><span>年<span class="nw">480万円</span> × <span class="nw">15年</span></span><span>＝ <b>7,<span class="nw">200万円</span></b>（圧縮した額と同じ）</span></div>
+      <figcaption>元本返済と手残りは初年度の額（実際は年々、元本返済が増え、手残りが減る）。<span class="nw">2章</span>の例は建物を建築費の6割としましたが、この試算<span class="nw">は4割です。</span></figcaption>
+    </figure>
+
+    <p class="s-lead">必要なのは<span class="strong">相続税が増えても大丈夫な対策</span>です。相続まで<span class="nw">15年</span>以上あるなら、財産がそれ以上増えない法人での賃貸経営の方が有利になる可能性もあります。これが、法人をすすめるもう<span class="nw">1つ</span>の<span class="nw">理由です。</span></p>
+    <p class="s-lead">だから、事業計画の借入金の残高と毎年の手残りを連動させて、相続税の推移まで出しておきます。<mark>「今亡くなったらいくら」の試算だけでは、<span class="nw">10年</span>後にいくら用意すればよいかが見えないからです。</mark></p>
+  </div>
+</section>
+
+<!-- ════════════ 第4章 ════════════ -->
+<section class="s" id="s4">
+  <div class="s-inner">
+    <div class="s-num">第<span class="nw">4章</span></div>
+    <h2 class="s-h">売却・修繕・建替えは、<br class="sp">事業承継から逆算する</h2>
+    <p class="s-lead">ただ、相続税の話だけでは、いまの大家さんには響かない、と渡邊氏は見ています。渡邊氏が強い危機感を抱いているのは、お子さんに「不動産は継ぎたくない、現金でほしい」と言われるケースです。築古で修繕費が読めず、家賃は下がり、手間ばかり。賃貸経営に魅力がないと<span class="strong">思われている</span>のが一番<span class="nw">の問題です。</span></p>
+    <p class="s-lead">もっとも、思い込みも大きいといいます。「相続してしまった」と相談に来た方の物件は、国立駅から徒歩<span class="nw">10分</span>、築<span class="nw">40年</span>ほどの木造アパートで満室、借入れなし、預金も2,<span class="nw">000万円</span>ほど。恵まれているのに、本人は気づいていま<span class="nw">せんでした。</span></p>
+    <div class="chips5">
+      <div class="hd">渡邊氏が定義した「賃貸経営の5重苦」</div>
+      <ul>
+        <li>空室<span class="nw">20%</span>超</li>
+        <li>耐用年数オーバーの築古</li>
+        <li>借入れ億超＆返済比率<span class="nw">70%</span>超</li>
+        <li>立地が最悪</li>
+        <li>預金ゼロ</li>
+      </ul>
+      <p class="ft">返済比率は、家賃収入に対する返済額の割合です。</p>
+    </div>
+    <p class="s-lead"><span class="nw">5つ</span>とも当てはまる人は、一人も見たことがない（渡邊氏の実家でも<span class="nw">4つ</span>）そうです。多くの大家さんは実は恵まれていて、まずそれを分かってもらうことが大事だ<span class="nw">といいます。</span></p>
+
+    <h3 class="s-sub"><span class="cn mark"></span>判断の出発点は「事業承継の可能性」</h3>
+    <p class="s-lead">「売却か、修繕か、建替えか」という相談に、渡邊氏は次の流れで答えます。出発点が事業承継の可能性であることが、「逆算する」<span class="nw">の意味です。</span></p>
+
+    <figure class="gfig">
+      <div class="gfig-t">売却・修繕・建替えフローチャート<span class="gfig-s">青い問いに答えて下へ。右に抜けたところが結論です</span></div>
+      <ol class="fc">
+        <li class="fc-step">
+          <div class="fc-q"><span class="n">1</span>事業承継の可能性がある？</div>
+          <div class="fc-exits"><div class="fc-exit"><span class="fc-ans">ない</span><span class="fc-res">将来の売却・組み換えを検討</span></div></div>
+          <div class="fc-go"><span class="fc-ans">ある</span></div>
+        </li>
+        <li class="fc-step">
+          <div class="fc-q"><span class="n">2</span>収益に問題ない？<small>（収益改善できる？）</small></div>
+          <div class="fc-exits"><div class="fc-exit"><span class="fc-ans">問題ない</span><span class="fc-res">そのまま維持し、将来の修繕を検討</span></div></div>
+          <div class="fc-go"><span class="fc-ans">問題ある</span></div>
+        </li>
+        <li class="fc-step">
+          <div class="fc-q"><span class="n">3</span>修繕して維持できる？</div>
+          <div class="fc-exits"><div class="fc-exit"><span class="fc-ans">維持できない</span><span class="fc-res">建替えや売却へ</span></div></div>
+          <div class="fc-go"><span class="fc-ans">維持できる</span></div>
+        </li>
+        <li class="fc-step last">
+          <div class="fc-q"><span class="n">4</span>相続税で比較</div>
+          <div class="fc-exits"><div class="fc-exit dual"><div class="fx"><span class="fc-ans">建替えの方が得</span><span class="fc-res">建替えへ</span></div><div class="fx"><span class="fc-ans">大規模修繕の方が得</span><span class="fc-res">大規模修繕へ</span></div></div></div>
+        </li>
+      </ol>
+      <div class="fc-last"><span class="n">5</span><b>すぐ実行するかは、年齢の問題</b><span>建替えも大規模修繕も、元気なうちに（<span class="nw">6章</span>）</span></div>
+    </figure>
+
+    <p class="s-lead"><span class="nw">1つ</span>目の、事業承継の可能性を見るときは、物件の価値を「資産」と「運用」に分け、割合を数字にして<span class="nw">もらいます。</span></p>
+    <figure class="gfig">
+      <div class="gfig-t">賃貸物件の価値を「資産」と「運用」に分けてみる<span class="gfig-s">割合は、渡邊氏が挙げた<span class="nw">2つ</span>の例</span></div>
+      <div class="rt">
+        <div class="rt-row"><div class="lb">立地がまあまあ良い物件</div><div class="rt-bar"><span class="as" style="width:70%">資産<b>7</b></span><span class="op" style="width:30%">運用<b>3</b></span></div></div>
+        <div class="rt-row"><div class="lb">オーナーの頑張りで維持している物件</div><div class="rt-bar"><span class="as" style="width:20%">資産<b>2</b></span><span class="op" style="width:80%">運用<b>8</b></span></div></div>
+      </div>
+      <dl class="rt-def">
+        <div><dt><i style="background:#1d4ed8"></i>資産</dt><dd>立地・エリア・建物の状態など、目に見える価値</dd></div>
+        <div><dt><i style="background:#fed7aa"></i>運用</dt><dd>管理会社とのやりとりや、こだわりのリフォームなど、オーナーの頑張り</dd></div>
+      </dl>
+    </figure>
+    <p class="s-lead">気をつけたいのは、運用の割合が大きい物件、とくに自主管理で忙しい親です。それを見たお子さんは、会社勤めをしながら同じことはできない、と感じがち。どこまでならできるかを一緒<span class="nw">に考えます。</span></p>
+    <p class="s-lead"><mark>事業承継で困っているオーナーほど、お子さんと話していません。</mark>まずは<span class="strong">継いでほしいと口に出して伝える</span>こ<span class="nw">とからです。</span></p>
+
+    <h3 class="s-sub"><span class="cn mark"></span>修繕か建替えかは「相続税負担額」の推移で比べる</h3>
+    <p class="s-lead"><span class="nw">4つ</span>目の、修繕か建替えかは、相続税だけでは決めません。相続税は一時点の数字で、その後も賃貸経営は続くからです。相続税から、その後の手残りの累計を引いた「相続税負担額」<span class="nw">で比べます。</span></p>
+    <div class="vs">
+      <div class="vs-c"><span class="lb">大規模修繕した場合</span><span class="f">修繕後の相続税<i>−</i>修繕後の手残り累計</span></div>
+      <div class="vs-x">VS</div>
+      <div class="vs-c"><span class="lb">建て替えた場合</span><span class="f">建替後の相続税<i>−</i>建替後の手残り累計</span></div>
+      <div class="vs-r">年ごとに出し、相続が起きそうな時期に、<br class="sp">負担額が小さい方を選ぶ</div>
+    </div>
+    <p class="s-lead"><span class="nw">2つ</span>の負担額は、年数がたつと逆転することもあるので、推移で比べます。渡邊氏の例では、<span class="nw">15年</span>目まで建て替えた方がずっと小さく、建替えが得でした。今の通達案のままでは、建て替えて<span class="nw">5年</span>以内に相続が起きると建物が時価で評価されうる点も<span class="nw">加味します。</span></p>
+  </div>
+</section>
+
+<!-- ════════════ 第5章 ════════════ -->
+<section class="s" id="s5">
+  <div class="s-inner">
+    <div class="s-num">第<span class="nw">5章</span></div>
+    <h2 class="s-h">認知症対策と、<br class="sp">法人化の落とし穴</h2>
+    <p class="s-lead">ここまでの対策は、どれも認知症になる前に済ませておく必要があります。売買や抵当権の設定には本人の意思能力が要り、判断能力が欠けると家庭裁判所が後見人を選びます。後見人の役目は財産を守ることなので、<span class="strong">生前贈与はできず、投資もかなり難しくなります</span>。対策は、規模に応じて<span class="nw">3つ</span>を使<span class="nw">い分けます。</span></p>
+    <div class="opts">
+      <div class="opt"><div class="t">法人化</div><span class="who">規模が大きい人</span><div class="d">所得税の節税もできる（個人の課税所得<span class="nw">800万円</span>以上が目安）。費用がかかり、相続の直前だと相続税が高くなることも。</div></div>
+      <div class="opt"><div class="t">家族信託</div><span class="who">規模が中くらいの人</span><div class="d">契約で自由に設計できる。損益通算ができず、節税には使えない。専門家の費用も高め。</div></div>
+      <div class="opt"><div class="t">生前贈与</div><span class="who">相続税がかからない規模の人</span><div class="d">相続時精算課税制度なら、2,<span class="nw">500万円</span>まで贈与税がかからず、相続のときに相続税で精算する。</div></div>
+    </div>
+    <p class="s-lead">渡邊氏のおすすめは、建物を法人に、土地を家族信託にするハイブリッドです。土地だけの信託なら設計が複雑にならず、費用も抑<span class="nw">えられます。</span></p>
+
+    <h3 class="s-sub"><span class="cn mark"></span>合同会社の定款と、株の「準共有」</h3>
+    <div class="insight">
+      <div class="ico">!</div>
+      <p><span class="k">合同会社は、定款に相続の定めがあるかを確かめる</span><br>定款の認証が要らない合同会社は、ネットのひな形で自分で設立する人が増えています。持分は相続できないのが原則で、定款に「相続人は持分を承継して社員となることができる」の定めが無いと、<span class="em">持分は相続できません</span>。</p>
+    </div>
+    <p class="s-lead">定めが無いと、出資者が複数なら相続人に払い戻し、<span class="nw">1人</span>なら会社は解散します。持分の評価は（資産の評価額−負債）×持分割合で、類似業種比準価額も使えず上がるおそれがあり、払戻しが出資の元本を超えれば、みなし配当として所得税もかかります。定款は出資者の合意で変えられるので、相続の前に書い<span class="nw">ておきます。</span></p>
+    <p class="s-lead">株式会社でも、株主が亡くなると、遺産分割が終わるまで株は相続人全員の共有（準共有）になり、議決権は持分価額の過半数で選んだ代表者が行使します。長男と次男が<span class="nw">2分</span>の1ずつなら、協力しない限り代表者を選べず、会社の大事なことが決まりません。遺言書を中心に、種類株式（承継する人に普通株式、ほかの人に無議決権株式）や株式信託で、承継する人まで手当てし<span class="nw">ておきます。</span></p>
+  </div>
+</section>
+
+<!-- ════════════ 第6章 ════════════ -->
+<section class="s" id="s6">
+  <div class="s-inner">
+    <div class="s-num">第<span class="nw">6章</span></div>
+    <h2 class="s-h">「継ぎたくない」を<br class="sp">「継ぎたい」に<br class="sp">変える3つの方法</h2>
+    <p class="s-lead">お子さんが嫌がっているのは、不動産そのものより引き継ぐ負担で、求めているのは長く安定した収入です。方法は<span class="nw">3つ</span>あ<span class="nw">ります。</span></p>
+    <div class="opts">
+      <div class="opt"><div class="t"><span class="n">1</span>手間がかからない状態にする</div><div class="d">親と同じ時間・労力をかけなくても回る形にする。</div></div>
+      <div class="opt"><div class="t"><span class="n">2</span>修繕を済ませるか、積立を積み上げる</div><div class="d">修繕の負担を、次の世代に先送りしない。</div></div>
+      <div class="opt"><div class="t"><span class="n">3</span>借金があっても問題ない状態にする</div><div class="d">売れば借金を完済できる状態にして、数字で示す。</div></div>
+    </div>
+
+    <p class="s-lead">方法1は、<span class="nw">4章</span>のとおり、お子さんがどこまでならできるかを一緒に考えるところから。以下、方法2・3を詳<span class="nw">しく見ます。</span></p>
+
+    <h3 class="s-sub"><span class="cn mark"></span>方法2　修繕は先送りせず、元気なうちに親子で</h3>
+    <p class="s-lead">今やらなければ、しわ寄せはお子さんに先送りされるだけです。建築費の半分ほどは人件費で下がる見込みはなく、渡邊氏は「今が一番建築費が安い」と見ています。お金をかけるなら、外壁の色を変えて印象をがらりと変える、攻めの<span class="nw">修繕にします。</span></p>
+    <p class="s-lead">修繕は、相続税の面でも意味があります。現金は減るのに、建物の評価（固定資産税評価額）は上がらないからです。評価が上がるのは増築と、資本的支出にあたる改築だけで、外壁塗装は基本的に修繕費。<span class="nw">5年</span>ルールの対象外で評価も上がらないので、相続の直前でも十分効果がある、と渡邊氏<span class="nw">は話します。</span></p>
+    <p class="s-lead">増改築でも効果はあります。固定資産税評価額は<span class="nw">3年</span>に1度の評価替えなので、評価額がまだ付いていない増改築は、費用から償却費相当額を引いた額の7割で評価する<span class="nw">決まりです。</span></p>
+    <figure class="gfig">
+      <div class="gfig-t">相続の直前に2,<span class="nw">000万円</span>の増改築をした場合<span class="gfig-s">渡邊氏の計算例（鉄筋コンクリートのマンション・住宅用）</span></div>
+      <div class="eqs">
+        <div class="eq"><span class="v">2,<span class="nw">000万円</span><small>増改築の費用</small></span> <span class="g"><span class="op">→</span><span class="v">約1,<span class="nw">373万円</span><small>償却費相当額を引いて×<span class="nw">70%</span>（約<span class="nw">31%</span>減額）</small></span></span></div>
+        <div class="eq"><span class="v">約1,<span class="nw">373万円</span></span> <span class="g"><span class="op">×</span><span class="v">（1−0.3）<small>賃貸の3割減</small></span></span> <span class="g"><span class="op">＝</span><span class="v res">約<span class="nw">961万円</span><small>約<span class="nw">52%</span>減額</small></span></span></div>
+      </div>
+      <figcaption>相続税率<span class="nw">40%</span>なら、節税効果は（2,<span class="nw">000万円</span>−約<span class="nw">961万円</span>）×<span class="nw">40%</span>＝約<span class="nw">416万円</span>。</figcaption>
+    </figure>
+    <p class="s-lead">建替えや大規模修繕は気力と体力が要るので、元気なうちに、できれば親子で取り組みます。継ぎたくない人は、自分が建てたわけではないと、どこか他人事で想いがありません。親子でやることで「想い」を承継する。それこそが事業承継だといいます。見積もりを価格・信用力・提案力・デザイン力のどれで選ぶかも、お子さんに決めて<span class="nw">もらいます。</span></p>
+    <div class="verdict">
+      <span class="k">経営の本質は、決断すること</span>
+      <p>決断を避けたい人ほど、賃貸経営を嫌がります。法人ならお子さんを役員に加えて責任を与えます。責任があって初めて当事者意識が芽生え、経営者として判断できるようになります。渡邊氏自身も、代表者として腹をくくってから、賃貸経営が楽しく思えるように<span class="nw">なりました。</span></p>
+    </div>
+
+    <p class="s-lead">修繕がまだ先なら、修繕積立金を積み立てます。ただ、預金では経費になりません。積立金を経費にしたいなら、次の<span class="nw">2つ</span>が<span class="nw">あります。</span></p>
+    <div class="duo tagged">
+      <div class="b"><div class="t"><span class="tag">個人</span>小規模企業共済</div><div class="d">月<span class="nw">7万円</span>まで所得控除（事業的規模の方に限る）。</div></div>
+      <div class="b"><div class="t"><span class="tag">法人</span>倒産防止共済</div><div class="d">月<span class="nw">20万円</span>まで経費（総額<span class="nw">800万円</span>が上限）。</div></div>
+    </div>
+
+    <h3 class="s-sub"><span class="cn mark"></span>方法3　借金は「売ればいつでもやめられる」状態に</h3>
+    <p class="s-lead">「借金を残したまま、子どもに継がせてよいか」。地方のオーナーに多いこの不安も、多くは漠然としたものだ、と渡邊氏は言います。賃貸経営は事業計画が立てやすく、ずれも少ない。返済しても手残りが残る計画を、数字でお子さんと<span class="nw">共有します。</span></p>
+    <p class="s-lead">それでも、返済できなくなる可能性はゼロではありません。ただ、賃貸経営は売ればやめられます。いつでもやめられる状態にしておけば、終わりにするまで全力でやればいい。<mark>売っても借金が残らない状態にしておけば、借金があってもお子さんに十分引き継げる、と渡邊氏は考えています。</mark></p>
+    <p class="s-lead">その時期を見るために渡邊氏が作った指標が「リリーフクロス」です。比べるのは、借入金の残債と「返済前売却保有累計」の<span class="nw">2本</span>の線。後者は、それまでの手残りの累計に、その時点で売った場合の手取り（売却額から諸費用と税金を引いた額）を足し<span class="nw">たものです。</span></p>
+
+    <figure class="gfig">
+      <div class="gfig-t">残債が「返済前売却保有累計」を下回れば、理論上はいつでもやめられる<span class="gfig-s">模式図（渡邊氏が示したグラフの形をもとに作成。目盛りは省略）</span></div>
+      <div class="cf-plot rl" role="img" aria-label="借入金の残債は年とともに下がり、返済前売却保有累計は上がる。2本が交わる時期がリリーフクロスで、その後は売れば完済できる">
+        <svg viewBox="0 0 340 350" preserveAspectRatio="none" aria-hidden="true">
+          <rect x="0" y="0" width="108.2" height="350" fill="#e5e7eb"/>
+          <rect x="108.2" y="0" width="231.8" height="350" fill="#d1fae5"/>
+          <line class="ax" x1="0" y1="350" x2="340" y2="350"/>
+          <line x1="108.2" y1="0" x2="108.2" y2="350" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="5 4" vector-effect="non-scaling-stroke"/>
+          <polyline class="ln" stroke="#c2410c" points="0,70 10,74.4 20,79 30,83.7 40,88.6 50,93.7 60,98.9 70,104.3 80,109.9 90,115.8 100,121.8 110,128 120,134.4 130,141.1 140,148 150,155.1 160,162.5 170,170.2 180,178.1 190,186.3 200,194.8 210,203.6 220,212.7 230,222.1 240,231.8 250,241.9 260,252.3 270,263.1 280,274.3 290,285.8 300,297.8 310,310.2 320,323 330,336.3 340,350"/>
+          <polyline class="ln" stroke="#047857" points="0,165 340,45"/>
+        </svg>
+        <span class="cf-dot big hit" style="left:31.82%;top:36.24%"></span>
+        <span class="cf-lab tx hit" style="left:31.82%;top:0;transform:translate(-50%,-125%)">リリーフクロス</span>
+        <span class="cf-lab tx yl" style="left:0;top:0;transform:translate(0,-125%)">金額 ↑</span>
+        <span class="cf-lab tx ng" style="left:1%;top:20%;transform:translate(0,-135%)">借入金の残債</span>
+        <span class="cf-lab tx hit" style="left:99%;top:12.86%;transform:translate(-100%,-135%)">返済前売却保有累計</span>
+      </div>
+      <div class="cf-x rl"><span style="left:100%">経過年数 →</span></div>
+      <div class="cf-leg">
+        <span><i class="bg" style="background:#e5e7eb"></i>交わる前：売っても借金が残る（やめられない）</span>
+        <span><i class="bg" style="background:#d1fae5"></i>交わった後：理論上は、売れば完済できる（<span class="nw">いつでもやめられる</span>）</span>
+      </div>
+      <figcaption>高く売れなければ、累計の線は横ばいになることもあります。交わった後なら、理論上は（売却予想金額どおりに売れれば）売って完済できるので、借入れが残っていても、継いだお子さんに迷惑がかかるわけではない、と渡邊氏は<span class="nw">見ています。</span></figcaption>
+    </figure>
+
+    <div class="todo" id="todo">
+      <div class="todo-h">明日からやること</div>
+      <p class="todo-lead">大家さんを顧問先に持つ会計事務所が、始められ<span class="nw">ることです。</span></p>
+      <div class="actions one">
+        <div class="action"><div class="n">1</div><div class="t">手残りがマイナスになる年を、<br class="sp">先に出す</div><div class="d">顧問先ごとに事業計画表を作り、利息の減少と償却の終わりで、何年目にマイナスになるかを示す（<span class="nw">1章</span>）。</div></div>
+        <div class="action"><div class="n">2</div><div class="t">相続税を、<br class="sp"><span class="nw">5年</span>後・<span class="nw">10年</span>後まで出す</div><div class="d">借入金の残高と手残りを連動させて推移を出し、納税資金をいつまでにいくら用意するかを決める。相続前<span class="nw">5年</span>以内の購入・建替えは時価評価になりうることも伝える（2・<span class="nw">3章</span>）。</div></div>
+        <div class="action"><div class="n">3</div><div class="t">売却・修繕・建替えの相談は、<br class="sp">事業承継の可能性から聞く</div><div class="d">資産と運用の割合を数字にしてもらい、まずお子さんに「継いでほしい」と伝えるようすすめる（<span class="nw">4章</span>）。</div></div>
+        <div class="action"><div class="n">4</div><div class="t">法人の定款と株を点検する</div><div class="d">合同会社なら持分を相続できる定めが定款にあるか。株式会社なら遺言書や種類株式で承継する人が決まっているか（<span class="nw">5章</span>）。</div></div>
+        <div class="action"><div class="n">5</div><div class="t">借入れのある物件は、<br class="sp">リリーフクロスの時期を示す</div><div class="d">売れば完済できるのは何年目からかを数字にして、親子で共有してもらう（<span class="nw">6章</span>）。</div></div>
+      </div>
+      <p class="todo-note">相続対策は早めに。事業承継まで考えるなら<span class="nw">60代</span>から、というのが渡邊氏の<span class="nw">まとめです。</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="closing-inner">
+    <div class="eyebrow">最後に — Closing</div>
+    <h2>引き継ぐのは不動産ではなく、<br><span class="hl">事業</span>と<span class="hl">想い</span></h2>
+    <p>大家さんの承継を「資産承継」と呼ぶのは残念だ、と渡邊氏は言います。「資産承継じゃだめなんです。事業承継なんです」。不動産を渡して終わりではなく、事業を引き継がなければ、承継したことにはならないからです。継ぎたくなる資産に整え、継いでほしいと口に出して伝え、借入れは売れば大丈夫な状態にしておく。それが、事業承継から逆算する<span class="nw">相続対策です。</span></p>
+  </div>
+</section>
+
 <section class="s" id="author">
   <div class="s-inner">
     <h2 class="author-label">講師紹介</h2>
@@ -89,244 +465,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <img src="img/kou_0642.jpg" alt="渡邊 浩滋 氏">
       <div>
         <div class="aname">渡邊 浩滋<span class="suffix">氏</span></div>
-        <div class="aorg">Knees bee税理士法人 代表／税理士・司法書士</div>
-        <p class="bio">大学在学中に司法書士試験に合格。総合商社の法務部を経て、税理士試験に合格。実家のアパート経営（アパート5棟・全86室）が危機的状況にあることを知り、自ら経営を引き継いで立て直した。資産税専門の税理士法人に勤務後、2011年12月に独立開業し、2022年10月に法人化。2018年に大家さん専門税理士ネットワーク「Knees bee（ニーズビー）」を設立。クライアントの99%が大家さんの、大家さん専門税理士。</p>
+        <div class="aorg">Knees bee税理士法人 代表／<br class="sp">税理士・司法書士</div>
+        <p class="bio">大学在学中に司法書士試験に合格。総合商社の法務部を経て、税理士試験に合格。実家のアパート経営（アパート5棟・全86室）が危機的状況にあることを知り、自ら経営を引き継いで立て直した。資産税専門の税理士法人に勤務後、<span class="nw">2011年</span>12月に独立開業し、<span class="nw">2022年</span>10月に法人化。<span class="nw">2018年</span>に大家さん専門税理士ネットワーク「Knees bee（ニーズビー）」を設立。クライアントの<span class="nw">99%</span>が大家さんの、大家さん<span class="nw">専門税理士。</span></p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ════════════ SECTION 01 ════════════ -->
-<section class="s" id="s1">
-  <div class="s-inner">
-    <div class="s-num">SECTION 01</div>
-    <h2 class="s-h">賃貸経営は「右肩下がり」 ― 将来の手残りを事業計画で見る</h2>
-    <p class="s-lead">講師は、祖父が相続対策で建て、父の代で固定資産税も払えなくなった実家のアパート経営を、自ら引き継いで立て直しました。その経験から、賃貸経営は建物・入居者・お金の3つを管理する仕事で、なかでもお金は<span class="em">将来のお金の管理</span>が大事だと言います。</p>
-
-    <h3 class="s-sub"><span class="cn mark"></span>家賃も経費も変わらないのに、手残りは減っていく</h3>
-    <p class="s-lead">講師は、この先の手残りを年ごとに数字にした「事業計画表」を作ります。下の試算は、家賃収入3,000万円・諸経費600万円・借入返済1,380万円・生活費500万円を毎年同じにしたものです。それでも手残りは年々減り、18年目にはマイナスになります。</p>
-    <table class="tbl">
-      <thead>
-        <tr><th style="width:22%">経過年数</th><th>支払利息</th><th>税金</th><th>手残り</th></tr>
-      </thead>
-      <tbody>
-        <tr><th>1年目</th> <td>820</td> <td>137</td> <td>383</td></tr>
-        <tr><th>6年目</th> <td>810</td> <td>301</td> <td>219</td></tr>
-        <tr><th>12年目</th> <td>700</td> <td>416</td> <td>104</td></tr>
-        <tr class="row-total"><th>18年目</th> <td>570</td> <td>534</td> <td><span class="strong">−14</span></td></tr>
-        <tr><th>24年目</th> <td>400</td> <td>607</td> <td>−87</td></tr>
-        <tr><th>30年目</th> <td>210</td> <td>700</td> <td>−180</td></tr>
-      </tbody>
-    </table>
-    <p class="tbl-note">単位：万円。税金は所得税・住民税。出典：講師のスライド「賃貸経営は右肩下がりのビジネスモデル」から抜粋した試算</p>
-    <p class="s-lead">理由は2つあります。1つは利息です。多くの大家さんは元金と利息の合計が一定の元利均等返済で借りているため、返済額は変わらないまま、経費になる利息だけが減って税金が増えていきます。もう1つは減価償却です。設備などを短い期間で償却していると、償却が終わった翌年から税金が一気に跳ね上がります。</p>
-    <div class="verdict">
-      <span class="k">将来の手残りは、事業計画で先に見る</span>
-      <p>確定申告は過去の数字で、しかも利益の計算です。元本の返済は利益の計算に乗らないため、申告では黒字でも、手元のお金は赤字ということがよく起こります。利息と減価償却の状況が分かる税理士なら、事業計画を作れば手残りがいつマイナスになるかを先に察知して、手を打てます。</p>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════ SECTION 02 ════════════ -->
-<section class="s" id="s2">
-  <div class="s-inner">
-    <div class="s-num">SECTION 02</div>
-    <h2 class="s-h">令和8年度改正の「5年ルール」と、個人か法人か</h2>
-    <p class="s-lead">不動産に換えると、相続税の評価は時価より大きく下がります。たとえば現金150を建物50・土地100の不動産に換えると、相続税評価は建物30（固定資産税評価額）・土地80（路線価）になります。賃貸にすると建物は3割、土地も2割ほど下がり、合わせて84と半分ほどになります。</p>
-
-    <h3 class="s-sub"><span class="cn mark"></span>相続前5年以内の購入は「時価×80%」に</h3>
-    <p class="s-lead">この差を使った節税が問題になり、令和4年の最高裁判決では、相続税の軽減を意図して購入・借入れをしたとして、路線価ではなく時価（鑑定評価）での評価が認められました。根拠は財産評価基本通達の総則6項です。金融機関の稟議書に「相続対策のため」と書かれていたことも、意図があったと見られる一因になりました。</p>
-    <p class="s-lead">令和8年度の税制改正は、この線引きをはっきりさせました。亡くなる前5年以内に取得・新築した貸付用不動産は、原則として時価で評価します。簡便法として取得価額をもとにした額の80%で評価でき、土地は取得価額×地価の変動率（相続時の路線価÷購入時の路線価）、建物は取得価額から減価償却費を引いた額がもとになります。</p>
-    <p class="s-lead">それでも2割は下がり、5年を過ぎればこれまでどおり路線価などで評価できます。対象は<span class="strong">令和9年1月1日以後の相続・贈与</span>で、令和8年に買った物件でも、相続や贈与が令和9年以降なら新ルールの対象です。ただし、通達が定められる日の5年前から持っている土地に、その日までに新築した家屋（建築中を含む）は対象外です。</p>
-    <div class="shots solo">
-      <div class="shot ok">
-        <a href="img/slide_5nen.jpg" target="_blank" rel="noopener"><img src="img/slide_5nen.jpg" alt="不動産の購入時期と相続税評価方法の違い"></a>
-        <div class="shot-cap"><b>不動産の購入時期と相続税評価方法の違い</b>　講師のスライドより。小口化不動産は、期間に関係なく常に時価で評価されます。</div>
-      </div>
-    </div>
-    <p class="s-lead">収録時点では、通達はまだ案の段階です。9月18日に出た通達案では、自宅、貸し駐車場（借地借家法の適用がない）、5年より前から持っている建物の増改築は対象外とされました。建替えは対象外に明記されておらず、講師の読みでは、今の案のままだと通達の日までに新築していない建替えは時価評価の対象になりそうです。なお、自宅でも総則6項は残ります。</p>
-
-    <h3 class="s-sub"><span class="cn mark"></span>「法人で買えば評価が下がる」は思い込み</h3>
-    <p class="s-lead">最近増えている相談が、「80歳を超えた父が、法人にお金を貸して法人で物件を買うべきか」です。講師の答えは、何を優先するかで個人か法人かを決める、です。</p>
-    <div class="duo">
-      <div class="b">
-        <span class="num">1</span>
-        <div class="t">相続税を優先するなら、個人で買う</div>
-        <div class="d">法人への貸付金は額面のまま評価され、下がりません。個人なら5年以内に相続があっても8割の評価、5年を過ぎれば路線価などで評価できます。ご高齢の方はこちらです。</div>
-      </div>
-      <div class="b">
-        <span class="num">2</span>
-        <div class="t">事業承継・認知症対策なら、法人も選択肢</div>
-        <div class="d">子どもを役員にして運営を任せられ、相続のたびの名義変更も要りません。父が認知症になっても、子が代表なら売却・修繕・借入れを続けられます。</div>
-      </div>
-    </div>
-    <p class="s-lead">法人で買うと家賃が法人に入るので、父の財産はそれ以上増えません。株主を子にすれば、利益は子の株の価値になります。つまり効果は<span class="strong">「増やさない」ことで、「下げる」ことではありません</span>。だから相続まで時間があるなら法人、短いなら個人というのが講師の目安です。父が法人に出資して買う方法は、非上場株式の評価の見直しが議論されているため、いまは効果を見通せないとしています。</p>
-  </div>
-</section>
-
-<!-- ════════════ SECTION 03 ════════════ -->
-<section class="s" id="s3">
-  <div class="s-inner">
-    <div class="s-num">SECTION 03</div>
-    <h2 class="s-h">相続税は年々上がる ― これからの相続対策の心がけ</h2>
-    <p class="s-lead">貸付用不動産について今回の改正で変わったのは、駆け込みの部分だけです（小口化不動産は別）。5年を過ぎれば路線価や固定資産税評価額が使えるので、これまでの不動産オーナーは変わりません。講師が挙げる、これからの心がけは2つです。</p>
-    <div class="rules cols2">
-      <div class="rule">
-        <div class="l">心がけ 1</div>
-        <div class="t">相続直前に対策をしない</div>
-        <div class="d">直前になると打てる手が限られ、一気に大きな不動産を買わないと評価を下げられなくなります。</div>
-      </div>
-      <div class="rule">
-        <div class="l">心がけ 2</div>
-        <div class="t">賃貸経営として取り組む</div>
-        <div class="d">相続対策が前面に出ると、総則6項で「意図して画策した」と見られかねません。法人の事業目的に不動産賃貸を入れ、賃貸経営が主眼だと分かる形にします。</div>
-      </div>
-    </div>
-
-    <h3 class="s-sub"><span class="cn mark"></span>評価を下げても、財産は毎年増えていく</h3>
-    <p class="s-lead">手残りが右肩下がりなのに対し、相続税は右肩上がりです。借入れの元本が減り、手残りが貯まるほど、財産が増えるからです。講師は、1億円の建物を建てた場合で試算しました。</p>
-    <div class="stats3">
-      <div class="stat"><div class="amt">2,800万円</div><div class="cap">1億円の建物の<b>相続税評価</b>（固定資産税評価額を4割とし、賃貸で7掛け）</div></div>
-      <div class="stat"><div class="amt">年480万円</div><div class="cap">元本返済260万円＋手残り220万円で<b>増える財産</b></div></div>
-      <div class="stat"><div class="amt">15年</div><div class="cap">圧縮した<b>7,200万円が消える</b>まで（480万円×15年）</div></div>
-    </div>
-    <p class="tbl-note">利回り7%・借入期間30年・利率1.5%での単純計算。元本返済と手残りは初年度の額。</p>
-    <p class="s-lead">評価を下げても、15年ほどで効果はなくなります。必要なのは<span class="strong">相続税が増えても大丈夫な対策</span>です。相続まで15年以上あるなら、財産がそれ以上増えない法人での賃貸経営が有利になる可能性もあります。</p>
-    <p class="s-lead">そのため、事業計画の借入残高と手残りを連動させて、将来の相続税の推移まで出しておきます。「今亡くなったらいくら」の試算だけでは、10年後にいくら用意すればよいかが見えないからです。</p>
-  </div>
-</section>
-
-<!-- ════════════ SECTION 04 ════════════ -->
-<section class="s" id="s4">
-  <div class="s-inner">
-    <div class="s-num">SECTION 04</div>
-    <h2 class="s-h">事業承継から逆算する ― 売却・修繕・建替えの判断</h2>
-    <p class="s-lead">講師がいま最も危機感を抱いているのは、お子さんから「不動産は継ぎたくない、現金でほしい」と言われるケースです。築年数が古く、修繕費がいくらかかるか分からず、家賃も下がって手間ばかり。賃貸経営に魅力がないと<span class="em">思われている</span>ことが一番の問題だといいます。</p>
-    <p class="s-lead">ただ、講師は思い込みによる部分も大きいと見ています。「相続してしまった」と相談に来た方の物件が、駅から徒歩10分・満室・借入れなしと、実はとても恵まれていたこともありました。講師は「賃貸経営の5重苦」として、空室20%超・耐用年数オーバーの築古・借入れ億超で返済比率70%超・立地が最悪・預金ゼロを挙げますが、5つとも当てはまる人はほぼいないといいます。</p>
-
-    <h3 class="s-sub"><span class="cn mark"></span>出発点は「事業承継の可能性」</h3>
-    <p class="s-lead">売却か、修繕か、建替えか。相談を受けたとき、講師は次の順番で考えます。講演のテーマ「事業承継から逆算する」の出発点が、ここです。</p>
-    <div class="steps">
-      <div class="step"><div class="n">1</div><div class="t">事業承継の可能性はあるか</div><div class="d">なければ、将来の売却・組み換えを検討</div></div>
-      <div class="step"><div class="n">2</div><div class="t">収益に問題はないか</div><div class="d">問題なければ、そのまま維持して将来の修繕を検討</div></div>
-      <div class="step"><div class="n">3</div><div class="t">修繕して維持できるか</div><div class="d">維持できなければ、建替えや売却へ</div></div>
-      <div class="step"><div class="n">4</div><div class="t">相続税で比べる</div><div class="d">得な方へ。建替えか、大規模修繕か</div></div>
-      <div class="step"><div class="n">5</div><div class="t">すぐ実行するか</div><div class="d">年齢の問題。気力と体力があるうちに</div></div>
-    </div>
-    <p class="s-lead">事業承継の可能性を見るときは、物件の価値を「資産」（立地・建物の状態）と「運用」（オーナーの頑張り・こだわり）に分け、割合を数字にしてもらいます。運用の割合が大きい物件、特に自主管理で忙しくしている親を見て、お子さんは「自分にはとてもできない」と感じがちです。</p>
-    <p class="s-lead">困っているオーナーほど、子どもと話していません。まずは<span class="strong">継いでほしいと口に出して伝える</span>こと。そのうえで、お子さんがどこまでならできるかを一緒に考えます。</p>
-
-    <h3 class="s-sub"><span class="cn mark"></span>修繕か建替えかは「相続税負担額」で比べる</h3>
-    <p class="s-lead">相続税は一時点の数字で、その後も賃貸経営は続きます。講師の実家は相続税だけを考えて建て、重荷を背負いました。そこで、相続税からその後の手残りの累計を引いた「相続税負担額」の推移で比べ、小さい方を選びます。</p>
-    <div class="duo">
-      <div class="b">
-        <span class="num">1</span>
-        <div class="t">大規模修繕した場合</div>
-        <div class="d">修繕後の相続税 − 修繕後の手残り累計</div>
-      </div>
-      <div class="b">
-        <span class="num">2</span>
-        <div class="t">建て替えた場合</div>
-        <div class="d">建替後の相続税 − 建替後の手残り累計</div>
-      </div>
-    </div>
-    <p class="s-lead">比べるときは、5年ルールも加味します。悩んでいるだけでは何も解決しないので、数字にして判断します。</p>
-  </div>
-</section>
-
-<!-- ════════════ SECTION 05 ════════════ -->
-<section class="s" id="s5">
-  <div class="s-inner">
-    <div class="s-num">SECTION 05</div>
-    <h2 class="s-h">認知症対策と、法人化の落とし穴</h2>
-    <p class="s-lead">対策は相続の前だけでなく、認知症になる前に済ませておく必要があります。売買や抵当権の設定などの契約には本人の意思能力が必要で、判断能力が欠けると家庭裁判所が後見人を選びます。後見人は財産を守るのが役目なので、<span class="strong">生前贈与はできず、投資もかなり難しくなります</span>。相続対策に早すぎることはありません。</p>
-    <div class="rules">
-      <div class="rule">
-        <div class="l">規模が大きい人</div>
-        <div class="t">法人化</div>
-        <div class="d">所得税の節税もできます。個人の課税所得800万円以上が目安です。</div>
-      </div>
-      <div class="rule">
-        <div class="l">規模が中くらいの人</div>
-        <div class="t">家族信託</div>
-        <div class="d">契約で自由に設計できますが、損益通算ができず節税には使えません。専門家の費用もかかります。</div>
-      </div>
-      <div class="rule">
-        <div class="l">相続税がかからない人</div>
-        <div class="t">生前贈与</div>
-        <div class="d">相続時精算課税制度なら、2,500万円まで贈与税がかからず、相続のときに相続税で精算します。</div>
-      </div>
-    </div>
-    <p class="s-lead">講師のおすすめは、建物は法人に、土地は家族信託にするハイブリッドです。土地だけなら担保や売却の設計で済み、費用も抑えられます。</p>
-
-    <h3 class="s-sub"><span class="cn mark"></span>合同会社の定款と、株の「準共有」</h3>
-    <div class="insight">
-      <div class="ico">!</div>
-      <p><span class="k">合同会社は、定款に相続の定めがあるかを確かめる</span><br>定款の認証が要らない合同会社は、ネットのひな形で自分で設立する人が増えています。定款に「相続人は持分を承継して社員となることができる」という定めが無いと、<span class="em">持分は相続できません</span>。</p>
-    </div>
-    <p class="s-lead">その場合、出資者が複数なら払戻し、1人なら会社が解散します。持分の相続税評価は（資産−負債）×持分割合で計算され、非上場株式の評価で使える類似業種比準価額なども使えないため、上がるおそれがあります。払戻しが出資の元本を超えれば、みなし配当として所得税もかかります。定款は出資者の合意で変えられるので、相続の前に必ず書いておきます。</p>
-    <p class="s-lead">株式会社でも、株主が亡くなると、遺産分割が終わるまで株は相続人全員の共有（準共有）になり、議決権は持分価額の過半数で選んだ代表者が行使します。長男と次男が2分の1ずつなら、どちらも過半数に届かず、会社の重要な決定ができなくなるおそれがあります。</p>
-    <p class="s-lead">会社を作るなら、遺言書を中心に、種類株式（後継者に普通株式、それ以外の人に無議決権株式）や株式信託で、誰が承継するかまで手当てしておきます。</p>
-  </div>
-</section>
-
-<!-- ════════════ SECTION 06 ════════════ -->
-<section class="s" id="s6">
-  <div class="s-inner">
-    <div class="s-num">SECTION 06</div>
-    <h2 class="s-h">「継ぎたくない」を「継ぎたい」に変える3つの方法</h2>
-    <p class="s-lead">承継者が嫌がっているのは、不動産そのものより、引き継ぐ負担です。求めているのは大きな儲けより、長期の安定。講師が挙げる方法は3つです。</p>
-    <div class="rules">
-      <div class="rule">
-        <div class="l">方法 1</div>
-        <div class="t">手間がかからない状態にする</div>
-        <div class="d">親と同じ時間と労力をかけなくても回る形にします。</div>
-      </div>
-      <div class="rule">
-        <div class="l">方法 2</div>
-        <div class="t">大規模修繕を済ませるか、修繕積立を積み上げる</div>
-        <div class="d">修繕の負担を、次の世代に先送りしません。</div>
-      </div>
-      <div class="rule">
-        <div class="l">方法 3</div>
-        <div class="t">借金があっても問題ない状態にする</div>
-        <div class="d">売却すれば完済できる状態を、数字で示します。</div>
-      </div>
-    </div>
-
-    <h3 class="s-sub"><span class="cn mark"></span>修繕は先送りせず、親子で決める</h3>
-    <p class="s-lead">今やらなければ、修繕のしわ寄せは承継者に回るだけです。建築費の半分ほどは人件費で、これは下がらないため、講師は「今が一番建築費が安い」と見ています。どうせお金をかけるなら、外壁の色を変えて印象をガラッと変えるなど、守りから攻め（差別化）の修繕にします。</p>
-    <p class="s-lead">相続税の面では、建物の評価（固定資産税評価額）が上がるのは、改築・増築にあたる資本的支出だけです。外壁塗装は基本的に修繕費なので、現金が減っても建物の評価は上がりません。5年ルールの対象外でもあり、相続の直前でも効果があります。</p>
-    <p class="s-lead">資本的支出になる増改築でも、評価額がまだ付いていない部分は（再建築価額−償却費相当額）×70%で評価します。講師の計算例（相続直前にRCの住宅へ2,000万円）では約1,373万円で、賃貸の3割減を合わせると約961万円（約52%減）です。</p>
-    <p class="s-lead">修繕の時期がまだ先なら、修繕積立金を積み立てます。預金では経費にならないので、個人なら小規模企業共済（事業的規模の方に限り、月7万円まで所得控除）、法人なら倒産防止共済（月20万円まで経費、総額800万円が上限）を使うと、無理なく積み立てられます。講師自身は、修繕費は今後も上がるとみて、経費にするより運用して増やす方法もすすめています。</p>
-    <p class="s-lead">建替えや大規模修繕は気力と体力が要るので、元気なうちに親子で取り組みます。講師はこれを事業承継のチャンスと見ています。見積もりを比べ、価格・信用力・提案力・デザイン力のどれで選ぶかを、お子さんに決めてもらうのです。</p>
-    <div class="verdict">
-      <span class="k">経営の本質は、決断すること</span>
-      <p>決断に慣れていない人ほど、賃貸経営を嫌がります。法人ならお子さんを役員に加えて、責任を与えます。責任があって初めて当事者意識が芽生え、経営者として判断できるようになります。講師自身も、継いだ当初は他人事で苦しみましたが、代表者として腹をくくってから、賃貸経営が楽しく思えるようになりました。</p>
-    </div>
-
-    <h3 class="s-sub"><span class="cn mark"></span>借金は「いつでもやめられる状態」にしておく</h3>
-    <p class="s-lead">「借金を残したまま子どもに継がせてよいか」という相談は、特に地方のオーナーから多く寄せられます。講師は、その不安の多くは漠然としたものだと言います。賃貸経営は事業計画が立てやすく、計画とずれることも少ない事業です。返済しても手残りが残る計画を、数字で子どもと共有します。</p>
-    <p class="s-lead">そして賃貸経営は、売却すればやめられます。不幸なのは、売っても借金が残ってやめられない状態です。講師は、保有中の手残りの累計に、売却額から諸費用と税金を引いた額（借入れを返す前）を足したもの（返済前売却保有累計）が、借入金の残債を上回る時期を、独自に「リリーフクロス」と名付けています。ここを越えれば、いつでもやめられます。</p>
-    <div class="shots solo">
-      <div class="shot ok">
-        <a href="img/slide_relief.jpg" target="_blank" rel="noopener"><img src="img/slide_relief.jpg" alt="リリーフクロスのグラフ"></a>
-        <div class="shot-cap"><b>リリーフクロス</b>　講師のスライドより。赤が借入金の残債、青が返済前売却保有累計。交わった後は、売却すれば完済できる状態です。</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════ まとめ ════════════ -->
-<section class="closing">
-  <div class="closing-inner">
-    <div class="eyebrow">最後に — Closing</div>
-    <h2>引き継ぐのは不動産ではなく、<br><span class="hl">事業</span>と<span class="hl">想い</span>です。</h2>
-    <p>講師は、大家さんの承継を「資産承継」と呼ぶのは残念だと言います。不動産を渡して終わりではなく、事業を引き継がなければ承継したことにならないからです。相続対策は早めに、事業承継まで考えるなら60代から。継ぎたくなる資産にし、継いでほしいと口に出して伝え、借入れは売却すれば大丈夫な状態にしておく。それが、事業承継から逆算する相続対策です。</p>
-  </div>
-</section>
-
-<!-- フローティング：目次へ戻る -->
 <a href="#toc" class="back-to-toc" aria-label="目次へ戻る">
   <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
   <span>目次へ戻る</span>
@@ -335,22 +480,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 (function(){
   var btn = document.querySelector('.back-to-toc');
   if(!btn) return;
-  var threshold = 600;
+  var threshold = 600, last = window.pageYOffset;
   function update(){
-    if(window.pageYOffset > threshold){ btn.classList.add('show'); }
+    var y = window.pageYOffset, up = y < last;
+    var narrow = window.innerWidth <= 560;
+    if(y > threshold && (!narrow || up)){ btn.classList.add('show'); }
     else{ btn.classList.remove('show'); }
+    last = y;
   }
   window.addEventListener('scroll', update, { passive:true });
   update();
 })();
 </script>
 
-<!-- 免責（フッター近く・2回目） -->
 <div class="disclaimer">
-  <p>※ 本資料はセミナー講演をAIで再構成したものです。記載の数値・見解は講演時点のものであり、特定の取り組みの結果を保証するものではありません。</p>
+  <p>※ 本資料はセミナー講演をAIで再構成したものです。記載の数値・見解は講演時点のものであり、特定の取り組みの結果を保証するものでは<span class="nw">ありません。</span></p>
 </div>
 
-<!-- コピーライト -->
 <footer class="page-foot">
   <p>© <a href="https://www.zenkoku-keiyukai.or.jp/" target="_blank" rel="noopener">全国中小企業経友会事業協同組合</a></p>
 </footer>
